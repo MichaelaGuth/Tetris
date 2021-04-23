@@ -9,68 +9,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/program/game/GameController.java" line="57" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/program/block_shapes/MirrorL.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/program/block_shapes/NormalL.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/program/block_shapes/NormalZ.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/program/block_shapes/Tube.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/program/game/Block.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/game/Kosticka.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/tvarykosticek/LkoMirror.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/tvarykosticek/LkoNormal.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/tvarykosticek/Trubka.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/tvarykosticek/ZkoNormal.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf.xml" afterPath="$PROJECT_DIR$/conf.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/BackButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/BackButton.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/BackClickButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/BackClickButton.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/CtverecKosticka.png" afterPath="$PROJECT_DIR$/resources/program/pictures/CtverecKosticka.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/ExitButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/ExitButton.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/ExitClickButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/ExitClickButton.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/HighScoreButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/HighScoreButton.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/HighScoreClickButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/HighScoreClickButton.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/HowToPlay.png" afterPath="$PROJECT_DIR$/resources/program/pictures/HowToPlay.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/HowToPlayMultiplayer.png" afterPath="$PROJECT_DIR$/resources/program/pictures/HowToPlayMultiplayer.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/HowToPlaySingleplayer.png" afterPath="$PROJECT_DIR$/resources/program/pictures/HowToPlaySingleplayer.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/Icon.png" afterPath="$PROJECT_DIR$/resources/program/pictures/Icon.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/LkoKosticka.png" afterPath="$PROJECT_DIR$/resources/program/pictures/LkoKosticka.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/MenuBackground.png" afterPath="$PROJECT_DIR$/resources/program/pictures/MenuBackground.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/MultiplayerButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/MultiplayerButton.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/MultiplayerClickButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/MultiplayerClickButton.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/NasledujiciKosticka.png" afterPath="$PROJECT_DIR$/resources/program/pictures/NasledujiciKosticka.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/Okrajpole.png" afterPath="$PROJECT_DIR$/resources/program/pictures/Okrajpole.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/Pole.png" afterPath="$PROJECT_DIR$/resources/program/pictures/Pole.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/RetryButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/RetryButton.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/RetryClickButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/RetryClickButton.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/SinglePlayerButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/SinglePlayerButton.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/SinglePlayerClickButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/SinglePlayerClickButton.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/TetrisBackground.png" afterPath="$PROJECT_DIR$/resources/program/pictures/TetrisBackground.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/TkoKosticka.png" afterPath="$PROJECT_DIR$/resources/program/pictures/TkoKosticka.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/TrubkaKosticka.png" afterPath="$PROJECT_DIR$/resources/program/pictures/TrubkaKosticka.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/ZkoKosticka.png" afterPath="$PROJECT_DIR$/resources/program/pictures/ZkoKosticka.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/Constants.java" afterPath="$PROJECT_DIR$/src/program/Constants.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/Icon.ico" afterPath="$PROJECT_DIR$/src/program/Icon.ico" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/program/Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/Pole.png" afterPath="$PROJECT_DIR$/src/program/Pole.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/game/GameController.java" afterPath="$PROJECT_DIR$/src/program/game/GameController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/game/GameUtils.java" afterPath="$PROJECT_DIR$/src/program/game/GameUtils.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/game/KostickaEnum.java" afterPath="$PROJECT_DIR$/src/program/game/BlockEnum.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/game/Smer.java" afterPath="$PROJECT_DIR$/src/program/game/Direction.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/game/game.fxml" afterPath="$PROJECT_DIR$/src/program/game/game.fxml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/menu/Controller.java" afterPath="$PROJECT_DIR$/src/program/menu/Controller.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/menu/menu.fxml" afterPath="$PROJECT_DIR$/src/program/menu/menu.fxml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/obrazky/HowToPlayMultiplayer.png" afterPath="$PROJECT_DIR$/src/program/pictures/HowToPlayMultiplayer.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/obrazky/ImageLoader.java" afterPath="$PROJECT_DIR$/src/program/pictures/ImageLoader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/score/HighScoreItem.java" afterPath="$PROJECT_DIR$/src/program/score/HighScoreItem.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/score/Score.java" afterPath="$PROJECT_DIR$/src/program/score/Score.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/score/ScoreController.java" afterPath="$PROJECT_DIR$/src/program/score/ScoreController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/score/score1.fxml" afterPath="$PROJECT_DIR$/src/program/score/score1.fxml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/tvarykosticek/Ctverec.java" afterPath="$PROJECT_DIR$/src/program/block_shapes/Square.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/tvarykosticek/TkoKosticka.java" afterPath="$PROJECT_DIR$/src/program/block_shapes/ShapeT.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/tvarykosticek/Tvar.java" afterPath="$PROJECT_DIR$/src/program/block_shapes/Shape.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/tvarykosticek/ZkoMirror.java" afterPath="$PROJECT_DIR$/src/program/block_shapes/MirrorZ.java" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
