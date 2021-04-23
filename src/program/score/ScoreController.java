@@ -1,4 +1,4 @@
-package sample.score;
+package program.score;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,9 +13,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import sample.Main;
-import sample.menu.Controller;
-import sample.obrazky.ImageLoader;
+import program.Main;
+import program.menu.Controller;
+import program.pictures.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,12 +28,12 @@ import java.util.List;
  */
 public class ScoreController {
     public AnchorPane Pain;
-    public Image Back;
+    private Image Back;
     public ImageView BackButton;
     public TableView Table;
     public TableColumn Players;
     public TableColumn Scores;
-    public TableColumn Places;
+    public TableColumn Ranks;
 
     @FXML
     public void initialize() {
@@ -48,25 +48,28 @@ public class ScoreController {
 
         ArrayList<String> scores;
         Score score = new Score("HighScore.txt");
-        scores = score.prohlizeni();
+        scores = score.loadScore();
         List list = new ArrayList();
-        Places.setCellValueFactory(new PropertyValueFactory("Poradi"));
+
+        Ranks.setCellValueFactory(new PropertyValueFactory("Poradi"));
         Players.setCellValueFactory(new PropertyValueFactory("JmenoHrace"));
         Scores.setCellValueFactory(new PropertyValueFactory("HighScore"));
-        for (String radek : scores) {
-            String[] policka = score.rozdeleni(radek);
-            list.add(new HighScoreItem(policka[0], Integer.parseInt(policka[1])));
+
+        for (String line : scores) {
+            String[] tmp = score.split(line);
+            list.add(new HighScoreItem(tmp[0], Integer.parseInt(tmp[1])));
         }
+
         ObservableList data = FXCollections.observableList(list);
-        SortedList<HighScoreItem> sortedlist = new SortedList<HighScoreItem>(data,
+        SortedList<HighScoreItem> sortedList = new SortedList<HighScoreItem>(data,
                 (HighScoreItem item1, HighScoreItem item2) ->
                 {
                    return item2.getHighScore()-item1.getHighScore();
                 });
-        for (int i = 0; i < sortedlist.size(); i++) {
-            sortedlist.get(i).setPoradi((i+1)+".");
+        for (int i = 0; i < sortedList.size(); i++) {
+            sortedList.get(i).setRank((i+1)+".");
         }
-        Table.setItems(sortedlist);
+        Table.setItems(sortedList);
         //Table.getSortOrder().add(Scores);
     }
 
@@ -83,15 +86,14 @@ public class ScoreController {
     /**
      * při najetí kurzorem myši na tlačítko - změna obrázku (rozsvícení tlačítka)
      */
-    public void BackClickButton() {
-        Image SinglePlayerclick = ImageLoader.LoadImage("BackClickButton.png");
-        BackButton.setImage(SinglePlayerclick);
+    public void onMouseEnterBackButton() {
+        BackButton.setImage(ImageLoader.LoadImage("onMouseEnterBackButton.png"));
     }
 
     /**
      * změna obrázku
      */
-    public void BackReleaseButton() {
+    public void onMouseLeaveBackButton() {
         BackButton.setImage(Back);
     }
 }

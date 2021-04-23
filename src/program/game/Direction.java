@@ -1,4 +1,4 @@
-package sample.game;
+package program.game;
 
 /**
  * Created by IntelliJ IDEA.
@@ -6,16 +6,16 @@ package sample.game;
  * Date: 26. 8. 2018
  * Time: 21:59
  */
-public enum Smer {
-    DOLU(0, 1),
-    DOLEVA(-1, 0),
-    DOPRAVA(1, 0),
-    NIC(0,0);
+public enum Direction {
+    DOWN(0, 1),
+    LEFT(-1, 0),
+    RIGHT(1, 0),
+    NONE(0,0);
 
     private int x;
     private int y;
 
-    Smer(int x, int y) {
+    Direction(int x, int y) {
         this.x = x;
         this.y = y;
     }

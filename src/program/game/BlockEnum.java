@@ -1,4 +1,4 @@
-package sample.game;
+package program.game;
 
 /**
  * Created by IntelliJ IDEA.
@@ -6,7 +6,7 @@ package sample.game;
  * Date: 26. 8. 2018
  * Time: 15:46
  */
-public enum KostickaEnum {
-    TRUBKA, CTVEREC, LKO, ZKO, TKO
+public enum BlockEnum {
+    TUBE, SQUARE, BLOCK_L, BLOCK_Z, BLOCK_T
 }
 

@@ -1,4 +1,4 @@
-package sample.game;
+package program.game;
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -18,18 +18,18 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.util.Duration;
-import sample.*;
-import sample.menu.Controller;
-import sample.obrazky.ImageLoader;
-import sample.score.Score;
-import sample.tvarykosticek.*;
+import program.*;
+import program.menu.Controller;
+import program.pictures.ImageLoader;
+import program.score.Score;
+import program.block_shapes.*;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import static sample.Constants.*;
-import static sample.game.GameUtils.*;
+import static program.Constants.*;
+import static program.game.GameUtils.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -39,11 +39,11 @@ import static sample.game.GameUtils.*;
  */
 public class GameController implements EventHandler<KeyEvent> {
 
-    public Canvas gameBoard;
+    public Canvas gameBoardCanvas;
     private Image playBackground;
 
-    public Canvas kosticka;
-    private Image nasledujiciKostickaBackground;
+    public Canvas block;
+    private Image nextBlockBackground;
 
     public Label scoreLabel;
 
@@ -55,20 +55,20 @@ public class GameController implements EventHandler<KeyEvent> {
     public ImageView retryButton;
     private Image retry;
 
-    public ImageView ramecek;
+    public ImageView frame;
 
     public ImageView howToPlay;
 
-    private Map<KostickaEnum, Image> kostickyImages;
+    private Map<BlockEnum, Image> blockImages;
 
-    private Tvar aktualKosticka;
-    private Tvar nasledujuKosticka;
-    private Kosticka[][] hraciPole;
+    private Shape currentShape;
+    private Shape nextShape;
+    private Block[][] gameBoard;
 
     private Timeline timeline;
 
     private int score;
-    private int scorelvl;
+    private int scoreLevel;
 
     /**
      * načtení herního plánu, nastavení skóre na nula
@@ -91,22 +91,22 @@ public class GameController implements EventHandler<KeyEvent> {
         retryButton.setImage(retry);
 
         playBackground = ImageLoader.LoadImage("Pole.png");
-        GraphicsContext gc = gameBoard.getGraphicsContext2D();
+        GraphicsContext gc = gameBoardCanvas.getGraphicsContext2D();
         gc.drawImage(playBackground,0,0);                   //vykresleni hraciho pozadi
 
-        ramecek.setImage(ImageLoader.LoadImage("Okrajpole.png"));
+        frame.setImage(ImageLoader.LoadImage("Okrajpole.png"));
 
-        nasledujiciKostickaBackground = ImageLoader.LoadImage("NasledujiciKosticka.png");
-        GraphicsContext gc2 = kosticka.getGraphicsContext2D();
-        gc2.drawImage(nasledujiciKostickaBackground,0,0);                                                               //vykresleni hraciho pozadi
+        nextBlockBackground = ImageLoader.LoadImage("NasledujiciKosticka.png");
+        GraphicsContext gc2 = block.getGraphicsContext2D();
+        gc2.drawImage(nextBlockBackground,0,0);                                                               //vykresleni hraciho pozadi
 
-        //obrazky si predem nactu do mapy, aby to bylo rychlejší
-        kostickyImages = new HashMap<>(KostickaEnum.values().length);
-        kostickyImages.put(KostickaEnum.CTVEREC, ImageLoader.LoadImage("CtverecKosticka.png", KOSTICKA_SIZE, KOSTICKA_SIZE));
-        kostickyImages.put(KostickaEnum.TRUBKA, ImageLoader.LoadImage("TrubkaKosticka.png", KOSTICKA_SIZE, KOSTICKA_SIZE));
-        kostickyImages.put(KostickaEnum.TKO, ImageLoader.LoadImage("TkoKosticka.png", KOSTICKA_SIZE, KOSTICKA_SIZE));
-        kostickyImages.put(KostickaEnum.LKO, ImageLoader.LoadImage("LkoKosticka.png", KOSTICKA_SIZE, KOSTICKA_SIZE));
-        kostickyImages.put(KostickaEnum.ZKO, ImageLoader.LoadImage("ZkoKosticka.png", KOSTICKA_SIZE, KOSTICKA_SIZE));
+        //pictures si predem nactu do mapy, aby to bylo rychlejší
+        blockImages = new HashMap<>(BlockEnum.values().length);
+        blockImages.put(BlockEnum.SQUARE, ImageLoader.LoadImage("CtverecKosticka.png", BLOCK_SIZE, BLOCK_SIZE));
+        blockImages.put(BlockEnum.TUBE, ImageLoader.LoadImage("TrubkaKosticka.png", BLOCK_SIZE, BLOCK_SIZE));
+        blockImages.put(BlockEnum.BLOCK_T, ImageLoader.LoadImage("ShapeT.png", BLOCK_SIZE, BLOCK_SIZE));
+        blockImages.put(BlockEnum.BLOCK_L, ImageLoader.LoadImage("LkoKosticka.png", BLOCK_SIZE, BLOCK_SIZE));
+        blockImages.put(BlockEnum.BLOCK_Z, ImageLoader.LoadImage("ZkoKosticka.png", BLOCK_SIZE, BLOCK_SIZE));
 
         //napoveda
         if (Controller.pocethracu == 1) {
@@ -124,33 +124,33 @@ public class GameController implements EventHandler<KeyEvent> {
      * inicializace hry
      */
     public void GameInit() {
-        aktualKosticka = nahodnaKosticka(kostickyImages);
-        nasledujuKosticka = nahodnaKosticka(kostickyImages);
-        hraciPole = new Kosticka[HRA_POCET_RADKU][HRA_POCET_SLOUPCU];
+        currentShape = generateRandomBlock(blockImages);
+        nextShape = generateRandomBlock(blockImages);
+        gameBoard = new Block[GAME_NUMBER_OF_LINES][GAME_NUMBER_OF_COLUMNS];
 
-        timeline = new Timeline(new KeyFrame(Duration.millis(POCATECNI_RYCHLOST),          //vytvoreni TIMERU
+        timeline = new Timeline(new KeyFrame(Duration.millis(INITIAL_FALLING_SPEED),          //vytvoreni TIMERU
                 ae -> gameLoop()));                                                        //ae = Action Event
         timeline.setCycleCount(Animation.INDEFINITE);                                      //nastavení časovače tak, aby pokračoval, dokud jej něco nevypne
         timeline.play();
-        scorelvl = 1; //začíná se na levelu 1
+        scoreLevel = 1; //začíná se na levelu 1
     }
 
     /**
      * herní operace, který se mají provést v každém tiku timeru
      */
     public void gameLoop() {
-        if (kontrolaGameOver(hraciPole)) {           //pokud je splněná podmínka GameOver, zavolá funkci GameOver
+        if (checkGameOver(gameBoard)) {           //pokud je splněná podmínka GameOver, zavolá funkci GameOver
             GameOver();
         }
 
-        posun(Smer.DOLU);   //při každém "tiku" timeru posune kosticku o 1 dolu
+        posun(Direction.DOWN);   //při každém "tiku" timeru posune kosticku o 1 dolu
 
-        vykresleni(kosticka, nasledujuKosticka.getTvar(), nasledujiciKostickaBackground);   //vykreslí nasledujici kosticku do nahledu
+        vykresleni(block, nextShape.getShape(), nextBlockBackground);   //vykreslí nasledujici kosticku do nahledu
 
         vymazZaplneneRadky();   //smaže plné řádky
         scoreLabel.setText(score+"");   //vypíše skóre
 
-        scorelvl = timerUp(levelUp(score));     //nastaví hru podle skóre na daný level
+        scoreLevel = timerUp(levelUp(score));     //nastaví hru podle skóre na daný level
 
     }
 
@@ -206,63 +206,63 @@ public class GameController implements EventHandler<KeyEvent> {
     public void handle(KeyEvent event) {
         switch (event.getCode()) {
             case UP:
-                rotace(aktualKosticka); //otočí aktuální kostičku o 90° doleva
+                rotace(currentShape); //otočí aktuální kostičku o 90° doleva
                 break;
             case DOWN:
-                posun(Smer.DOLU);   //posune aktuální kostičku o 1 políčko dolů
-                score = score + scorelvl;   //přičte určené skóre
+                posun(Direction.DOWN);   //posune aktuální kostičku o 1 políčko dolů
+                score = score + scoreLevel;   //přičte určené skóre
                 break;
             case LEFT:
-                posun(Smer.DOLEVA);
+                posun(Direction.LEFT);
                 break;
             case RIGHT:
-                posun(Smer.DOPRAVA);
+                posun(Direction.RIGHT);
                 break;
             case SPACE:
-                while (posun(Smer.DOLU)) {      //vyvolává posun dokud to jde
-                    score = score + 2*scorelvl;     //přičte určené skóre
+                while (posun(Direction.DOWN)) {      //vyvolává posun dokud to jde
+                    score = score + 2* scoreLevel;     //přičte určené skóre
                 }
                 break;
             default:
                 // nop
         }
         if (Controller.pocethracu == 2) {   //nastavení kláves pro multiplayer
-            Image nahodnaBarva = nahodnaBarva(kostickyImages);
+            Image nahodnaBarva = randomColor(blockImages);
             switch (event.getCode()) {
                 case DIGIT1:
                     //nastaví následující kostičku na Čtverec
-                    nasledujuKosticka = new Ctverec(nahodnaBarva);
-                    vykresleni(kosticka, nasledujuKosticka.getTvar(), nasledujiciKostickaBackground);
+                    nextShape = new Square(nahodnaBarva);
+                    vykresleni(block, nextShape.getShape(), nextBlockBackground);
                     break;
                 case DIGIT2:
-                    //nastaví následující kostičku na LkoMirror
-                    nasledujuKosticka = new LkoMirror(nahodnaBarva);
-                    vykresleni(kosticka, nasledujuKosticka.getTvar(), nasledujiciKostickaBackground);
+                    //nastaví následující kostičku na MirrorL
+                    nextShape = new MirrorL(nahodnaBarva);
+                    vykresleni(block, nextShape.getShape(), nextBlockBackground);
                     break;
                 case DIGIT3:
-                    //nastaví následující kostičku na LkoNormal
-                    nasledujuKosticka = new LkoNormal(nahodnaBarva);
-                    vykresleni(kosticka, nasledujuKosticka.getTvar(), nasledujiciKostickaBackground);
+                    //nastaví následující kostičku na NormalL
+                    nextShape = new NormalL(nahodnaBarva);
+                    vykresleni(block, nextShape.getShape(), nextBlockBackground);
                     break;
                 case DIGIT4:
                     //nastaví následující kostičku na Téčko
-                    nasledujuKosticka = new TkoKosticka(nahodnaBarva);
-                    vykresleni(kosticka, nasledujuKosticka.getTvar(), nasledujiciKostickaBackground);
+                    nextShape = new ShapeT(nahodnaBarva);
+                    vykresleni(block, nextShape.getShape(), nextBlockBackground);
                     break;
                 case DIGIT5:
-                    //nastaví následující kostičku na ZkoNormal
-                    nasledujuKosticka = new ZkoNormal(nahodnaBarva);
-                    vykresleni(kosticka, nasledujuKosticka.getTvar(), nasledujiciKostickaBackground);
+                    //nastaví následující kostičku na NormalZ
+                    nextShape = new NormalZ(nahodnaBarva);
+                    vykresleni(block, nextShape.getShape(), nextBlockBackground);
                     break;
                 case DIGIT6:
-                    //nastaví následující kostičku na ZkoMirror
-                    nasledujuKosticka = new ZkoMirror(nahodnaBarva);
-                    vykresleni(kosticka, nasledujuKosticka.getTvar(), nasledujiciKostickaBackground);
+                    //nastaví následující kostičku na MirrorZ
+                    nextShape = new MirrorZ(nahodnaBarva);
+                    vykresleni(block, nextShape.getShape(), nextBlockBackground);
                     break;
                 case DIGIT7:
                     //nastaví následující kostičku na Trubku
-                    nasledujuKosticka = new Trubka(nahodnaBarva);
-                    vykresleni(kosticka, nasledujuKosticka.getTvar(), nasledujiciKostickaBackground);
+                    nextShape = new Tube(nahodnaBarva);
+                    vykresleni(block, nextShape.getShape(), nextBlockBackground);
                     break;
             }
         }
@@ -270,40 +270,40 @@ public class GameController implements EventHandler<KeyEvent> {
 
     /**
      * posune kostku danym smerem
-     * @param smer smer, kterym sem a kostka posunout
+     * @param direction direction, kterym sem a kostka posunout
      * @return true pokud se posunuti povedlo,jinak false
      */
-    public boolean posun(Smer smer) {
+    public boolean posun(Direction direction) {
         //nastavení posunutí souřadnic
-        int x = aktualKosticka.getX() + smer.getX();
-        int y = aktualKosticka.getY() + smer.getY();
+        int x = currentShape.getX() + direction.getX();
+        int y = currentShape.getY() + direction.getY();
 
         // Vytvoreni kopie hraciho pole s vlozenou kostickou s posunem dle smeru
-        Kosticka[][] copyPole = GameUtils.copy(hraciPole);
-        VlozeniKostkyStatus status = GameUtils.vlozeniKosticky(aktualKosticka, hraciPole, copyPole, smer);
+        Block[][] copyPole = GameUtils.copy(gameBoard);
+        VlozeniKostkyStatus status = GameUtils.vlozeniKosticky(currentShape, gameBoard, copyPole, direction);
 
         switch (status) {
             case OK:
                 //posune kostičku a uloží ji do hracího pole
-                vykresleni(gameBoard, copyPole, playBackground, HRA_POCET_VIDITELNYCH_RADKU);
-                aktualKosticka.setX(x);
-                aktualKosticka.setY(y);
+                vykresleni(gameBoardCanvas, copyPole, playBackground, GAME_NUMBER_OF_VISIBLE_LINES);
+                currentShape.setX(x);
+                currentShape.setY(y);
                 return true;
             case KOLIZE_S_KOSTKOU_ZE_STRANY:
                 //jdu na další řádek :-)
             case KOLIZE_SE_STENOU:
                 //vykreslí pole stejně, jako kdyby se nic nestalo
-                copyPole = GameUtils.copy(hraciPole);
-                GameUtils.vlozeniKosticky(aktualKosticka, hraciPole, copyPole, Smer.NIC);
-                vykresleni(gameBoard, copyPole, playBackground, HRA_POCET_VIDITELNYCH_RADKU);
+                copyPole = GameUtils.copy(gameBoard);
+                GameUtils.vlozeniKosticky(currentShape, gameBoard, copyPole, Direction.NONE);
+                vykresleni(gameBoardCanvas, copyPole, playBackground, GAME_NUMBER_OF_VISIBLE_LINES);
                 return true;
             case KOLIZE_S_KONCEM:
                 //uloží spadlou kostku do hracího pole a nastaví novou následující kostičku
-                copyPole = GameUtils.copy(hraciPole);
-                GameUtils.vlozeniKosticky(aktualKosticka, hraciPole, copyPole, Smer.NIC);
-                hraciPole = copyPole;
-                aktualKosticka = nasledujuKosticka;
-                nasledujuKosticka = nahodnaKosticka(kostickyImages);
+                copyPole = GameUtils.copy(gameBoard);
+                GameUtils.vlozeniKosticky(currentShape, gameBoard, copyPole, Direction.NONE);
+                gameBoard = copyPole;
+                currentShape = nextShape;
+                nextShape = generateRandomBlock(blockImages);
                 return false;
         }
 
@@ -311,13 +311,13 @@ public class GameController implements EventHandler<KeyEvent> {
     }
 
     /**
-     * Otoci kostku o uhel dany matici {@link Constants#MATICE_OTOCENI}.
-     * @param aktual tvar k otoceni
+     * Otoci kostku o uhel dany matici {@link Constants#ROTATION_MATRIX}.
+     * @param aktual shape k otoceni
      */
-    public void rotace(Tvar aktual) {
+    public void rotace(Shape aktual) {
 
         // Otoceni
-        int[][] otoceni = nasobeniMatic(MATICE_OTOCENI, aktual.getBody());
+        int[][] otoceni = matrixMultiplication(ROTATION_MATRIX, aktual.getBody());
 
         /*
          * Pri otoceni muze dojit k presunu do jineho kvadrantu (- souradnice x nebo y), takze je potreba otocenou
@@ -337,12 +337,12 @@ public class GameController implements EventHandler<KeyEvent> {
             otoceni[0][i] = otoceni[0][i] + min;
         }
 
-        Kosticka[][] tmp = aktual.createTvar(otoceni);
+        Block[][] tmp = aktual.createTvar(otoceni);
 
 
-        aktualKosticka.setTvar(tmp);
+        currentShape.setShape(tmp);
 
-        posun(Smer.NIC);
+        posun(Direction.NONE);
     }
 
     /**
@@ -351,7 +351,7 @@ public class GameController implements EventHandler<KeyEvent> {
      * @param hraciPole
      * @param pozadi
      */
-    public void vykresleni(Canvas canvas, Kosticka[][] hraciPole, Image pozadi) {
+    public void vykresleni(Canvas canvas, Block[][] hraciPole, Image pozadi) {
         vykresleni(canvas, hraciPole, pozadi, hraciPole.length);
     }
 
@@ -361,11 +361,11 @@ public class GameController implements EventHandler<KeyEvent> {
      * @param hraciPole
      * @param pozadi
      */
-    public void vykresleni(Canvas canvas, Kosticka[][] hraciPole, Image pozadi, int pocetViditelnychRadku) {
+    public void vykresleni(Canvas canvas, Block[][] hraciPole, Image pozadi, int pocetViditelnychRadku) {
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        // Smazat vykreslene obrazky z predchoziho tiku
+        // Smazat vykreslene pictures z predchoziho tiku
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
         gc.drawImage(pozadi,0,0);
 
@@ -377,9 +377,9 @@ public class GameController implements EventHandler<KeyEvent> {
 
                 if (hraciPole[radek + offset][sloupec] != null) {
                     gc.drawImage(
-                            hraciPole[radek + offset][sloupec].getKosticka(),
-                            sloupec * KOSTICKA_SIZE,
-                            radek * KOSTICKA_SIZE
+                            hraciPole[radek + offset][sloupec].getBlock(),
+                            sloupec * BLOCK_SIZE,
+                            radek * BLOCK_SIZE
                     );
                 }
             }
@@ -391,18 +391,18 @@ public class GameController implements EventHandler<KeyEvent> {
      */
     public void vymazZaplneneRadky() {
         int scoreCounter = 0;
-        for (int radek = 0; radek < hraciPole.length; radek++) {
+        for (int radek = 0; radek < gameBoard.length; radek++) {
             boolean kontrola = true;
-            for (int sloupec = 0; sloupec < hraciPole[0].length; sloupec++) {
-                if (hraciPole[radek][sloupec] == null) {
+            for (int sloupec = 0; sloupec < gameBoard[0].length; sloupec++) {
+                if (gameBoard[radek][sloupec] == null) {
                     kontrola = false;
                     break;
                 }
             }
             if (kontrola) {
-                umazRadek(radek, hraciPole);
-                hraciPole = posunZbytekDolu(radek,hraciPole);
-                vykresleni(gameBoard, hraciPole, playBackground,HRA_POCET_VIDITELNYCH_RADKU);
+                deleteLine(radek, gameBoard);
+                gameBoard = moveTheRestBlocksDown(radek, gameBoard);
+                vykresleni(gameBoardCanvas, gameBoard, playBackground, GAME_NUMBER_OF_VISIBLE_LINES);
 
                 scoreCounter++;
             }
@@ -410,13 +410,13 @@ public class GameController implements EventHandler<KeyEvent> {
 
         switch (scoreCounter) {
             case 1:
-                score = score + SCORE_UMAZANI_RADKU * scorelvl;
+                score = score + SCORE_DELETED_LINE * scoreLevel;
                 break;
             case 2:
-                score = score + SCORE_UMAZANI_RADKU * scorelvl * 3;
+                score = score + SCORE_DELETED_LINE * scoreLevel * 3;
                 break;
             case 3:
-                score = score + SCORE_UMAZANI_RADKU * scorelvl * 5;
+                score = score + SCORE_DELETED_LINE * scoreLevel * 5;
                 break;
             default:
                 //nop

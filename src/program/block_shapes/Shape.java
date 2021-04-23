@@ -1,8 +1,8 @@
-package sample.tvarykosticek;
+package program.block_shapes;
 
 import javafx.scene.image.Image;
-import sample.Constants;
-import sample.game.Kosticka;
+import program.Constants;
+import program.game.Block;
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,32 +10,32 @@ import sample.game.Kosticka;
  * Date: 23. 8. 2018
  * Time: 18:48
  */
-public abstract class Tvar {
-    protected Kosticka[][] tvar;
-    protected int x = Constants.HRA_POCET_SLOUPCU / 2;
-    protected int y = Constants.POCATECNI_SOURADNICE;
+public abstract class Shape {
+    protected Block[][] shape;
+    protected int x = Constants.GAME_NUMBER_OF_COLUMNS / 2;
+    protected int y = Constants.INITIAL_COORDINATES;
 
-    public Tvar(Image image) {
+    public Shape(Image image) {
         this.image = image;
     }
 
-    public Kosticka[][] getTvar() {
-        return tvar;
+    public Block[][] getShape() {
+        return shape;
     }
 
     protected Image image;
 
-    public void setTvar(Kosticka[][] tvar) {
-        this.tvar = tvar;
+    public void setShape(Block[][] shape) {
+        this.shape = shape;
     }
 
     public int[][] getBody() {
         int[][] souradnice = new int[2][4];
         int k = 0;
-        Kosticka[][] kostka = getTvar();
+        Block[][] kostka = getShape();
         for (int j = 0; j<kostka[0].length; j++) {
             for (int i = 0; i<kostka.length; i++) {
-                Kosticka bod = kostka[i][j];
+                Block bod = kostka[i][j];
                 if (bod != null) {
                     souradnice[0][k] = i;
                     souradnice[1][k] = j;
@@ -46,10 +46,10 @@ public abstract class Tvar {
         return souradnice;
     }
 
-    public Kosticka[][] createTvar(int[][] souradnice) {
-        Kosticka[][] tvar = new Kosticka[4][4];      //TODO 4 = konstanta
+    public Block[][] createTvar(int[][] souradnice) {
+        Block[][] tvar = new Block[4][4];      //TODO 4 = konstanta
         for (int sloupec = 0; sloupec < souradnice[0].length; sloupec++) {
-            tvar[souradnice[0][sloupec]][souradnice[1][sloupec]] = new Kosticka(image);
+            tvar[souradnice[0][sloupec]][souradnice[1][sloupec]] = new Block(image);
         }
         return tvar;
     }

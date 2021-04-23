@@ -1,4 +1,4 @@
-package sample.menu;
+package program.menu;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -8,10 +8,10 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import sample.Main;
-import sample.game.GameController;
-import sample.obrazky.ImageLoader;
-import sample.score.ScoreController;
+import program.Main;
+import program.game.GameController;
+import program.pictures.ImageLoader;
+import program.score.ScoreController;
 
 public class Controller {
     public AnchorPane Pain;
@@ -59,12 +59,11 @@ public class Controller {
     /**
      * při najetí kurzorem myši na tlačítko - změna obrázku
      */
-    public void exitClickButton() {
-        Image Exitclick = ImageLoader.LoadImage("ExitClickButton.png");
-        exitButton.setImage(Exitclick);
+    public void onMouseEnterExitButton() {
+        exitButton.setImage(ImageLoader.LoadImage("ExitClickButton.png"));
     }
 
-    public void exitReleaseButton() {
+    public void onMouseLeaveExitButton() {
         exitButton.setImage(exit);
     }
 
@@ -137,9 +136,8 @@ public class Controller {
     /**
      * při najetí kurzorem myši na tlačítko - změna obrázku
      */
-    public void highScoreClickButton() {
-        Image Highscoreclick = ImageLoader.LoadImage("HighScoreClickButton.png");
-        highScoresButton.setImage(Highscoreclick);
+    public void onMouseEnterHighScoreButton() {
+        highScoresButton.setImage(ImageLoader.LoadImage("HighScoreClickButton.png"));
     }
 
     public void highScoreReleaseButton() {

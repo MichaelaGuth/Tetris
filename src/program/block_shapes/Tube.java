@@ -1,0 +1,23 @@
+package program.block_shapes;
+
+import javafx.scene.image.Image;
+import program.game.Block;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: Kimiko
+ * Date: 23. 8. 2018
+ * Time: 19:15
+ */
+public class Tube extends Shape {
+    public Tube(Image image) {
+        super(image); //zavola konstruktor predka
+        this.shape = new Block[][] {
+                {new Block(image),null,null,null},
+                {new Block(image),null,null,null},
+                {new Block(image),null,null,null},
+                {new Block(image),null,null,null}
+        };
+
+    }
+}

@@ -6,10 +6,71 @@
     </artifacts-to-build>
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/sample/game/GameController.java" line="57" />
+    <bookmark url="file://$PROJECT_DIR$/src/program/game/GameController.java" line="57" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/program/block_shapes/MirrorL.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/program/block_shapes/NormalL.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/program/block_shapes/NormalZ.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/program/block_shapes/Tube.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/program/game/Block.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/game/Kosticka.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/tvarykosticek/LkoMirror.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/tvarykosticek/LkoNormal.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/tvarykosticek/Trubka.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/tvarykosticek/ZkoNormal.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/conf.xml" afterPath="$PROJECT_DIR$/conf.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/BackButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/BackButton.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/BackClickButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/BackClickButton.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/CtverecKosticka.png" afterPath="$PROJECT_DIR$/resources/program/pictures/CtverecKosticka.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/ExitButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/ExitButton.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/ExitClickButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/ExitClickButton.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/HighScoreButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/HighScoreButton.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/HighScoreClickButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/HighScoreClickButton.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/HowToPlay.png" afterPath="$PROJECT_DIR$/resources/program/pictures/HowToPlay.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/HowToPlayMultiplayer.png" afterPath="$PROJECT_DIR$/resources/program/pictures/HowToPlayMultiplayer.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/HowToPlaySingleplayer.png" afterPath="$PROJECT_DIR$/resources/program/pictures/HowToPlaySingleplayer.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/Icon.png" afterPath="$PROJECT_DIR$/resources/program/pictures/Icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/LkoKosticka.png" afterPath="$PROJECT_DIR$/resources/program/pictures/LkoKosticka.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/MenuBackground.png" afterPath="$PROJECT_DIR$/resources/program/pictures/MenuBackground.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/MultiplayerButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/MultiplayerButton.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/MultiplayerClickButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/MultiplayerClickButton.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/NasledujiciKosticka.png" afterPath="$PROJECT_DIR$/resources/program/pictures/NasledujiciKosticka.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/Okrajpole.png" afterPath="$PROJECT_DIR$/resources/program/pictures/Okrajpole.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/Pole.png" afterPath="$PROJECT_DIR$/resources/program/pictures/Pole.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/RetryButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/RetryButton.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/RetryClickButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/RetryClickButton.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/SinglePlayerButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/SinglePlayerButton.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/SinglePlayerClickButton.png" afterPath="$PROJECT_DIR$/resources/program/pictures/SinglePlayerClickButton.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/TetrisBackground.png" afterPath="$PROJECT_DIR$/resources/program/pictures/TetrisBackground.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/TkoKosticka.png" afterPath="$PROJECT_DIR$/resources/program/pictures/TkoKosticka.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/TrubkaKosticka.png" afterPath="$PROJECT_DIR$/resources/program/pictures/TrubkaKosticka.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/sample/obrazky/ZkoKosticka.png" afterPath="$PROJECT_DIR$/resources/program/pictures/ZkoKosticka.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/Constants.java" afterPath="$PROJECT_DIR$/src/program/Constants.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/Icon.ico" afterPath="$PROJECT_DIR$/src/program/Icon.ico" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/program/Main.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/Pole.png" afterPath="$PROJECT_DIR$/src/program/Pole.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/game/GameController.java" afterPath="$PROJECT_DIR$/src/program/game/GameController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/game/GameUtils.java" afterPath="$PROJECT_DIR$/src/program/game/GameUtils.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/game/KostickaEnum.java" afterPath="$PROJECT_DIR$/src/program/game/BlockEnum.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/game/Smer.java" afterPath="$PROJECT_DIR$/src/program/game/Direction.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/game/game.fxml" afterPath="$PROJECT_DIR$/src/program/game/game.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/menu/Controller.java" afterPath="$PROJECT_DIR$/src/program/menu/Controller.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/menu/menu.fxml" afterPath="$PROJECT_DIR$/src/program/menu/menu.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/obrazky/HowToPlayMultiplayer.png" afterPath="$PROJECT_DIR$/src/program/pictures/HowToPlayMultiplayer.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/obrazky/ImageLoader.java" afterPath="$PROJECT_DIR$/src/program/pictures/ImageLoader.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/score/HighScoreItem.java" afterPath="$PROJECT_DIR$/src/program/score/HighScoreItem.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/score/Score.java" afterPath="$PROJECT_DIR$/src/program/score/Score.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/score/ScoreController.java" afterPath="$PROJECT_DIR$/src/program/score/ScoreController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/score/score1.fxml" afterPath="$PROJECT_DIR$/src/program/score/score1.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/tvarykosticek/Ctverec.java" afterPath="$PROJECT_DIR$/src/program/block_shapes/Square.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/tvarykosticek/TkoKosticka.java" afterPath="$PROJECT_DIR$/src/program/block_shapes/ShapeT.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/tvarykosticek/Tvar.java" afterPath="$PROJECT_DIR$/src/program/block_shapes/Shape.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/tvarykosticek/ZkoMirror.java" afterPath="$PROJECT_DIR$/src/program/block_shapes/MirrorZ.java" />
+    </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -70,60 +131,27 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sample/menu/Controller.java">
+        <entry file="file://$PROJECT_DIR$/src/program/menu/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
+            <state relative-caret-position="681">
+              <caret line="141" column="0" lean-forward="true" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2787#2803#0" expanded="true" />
+                <element signature="e#1819#1820#0" expanded="true" />
+                <element signature="e#1850#1851#0" expanded="true" />
+                <element signature="e#1970#1971#0" expanded="true" />
+                <element signature="e#2051#2052#0" expanded="true" />
+                <element signature="e#2095#2096#0" expanded="true" />
+                <element signature="e#2136#2137#0" expanded="true" />
+                <element signature="e#4887#4888#0" expanded="true" />
+                <element signature="e#4940#4941#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="21" column="28" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="21" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TkoKosticka.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/tvarykosticek/TkoKosticka.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="14" column="3" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="21" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HighScore.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HighScore.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HighScoreItem.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/score/HighScoreItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Kosticka.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/game/Kosticka.java">
+      <file leaf-file-name="Block.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/program/game/Block.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
@@ -132,33 +160,49 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tvar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/tvarykosticek/Tvar.java">
+      <file leaf-file-name="HighScoreItem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/program/score/HighScoreItem.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+              <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/game/GameUtils.java">
+      <file leaf-file-name="Score.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/program/score/Score.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2278">
-              <caret line="141" column="20" lean-forward="false" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="20" />
+            <state relative-caret-position="157">
+              <caret line="33" column="12" lean-forward="false" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#2575#2576#0" expanded="true" />
+                <element signature="e#2614#2615#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScoreController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/program/score/ScoreController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="952">
+              <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+              <folding>
+                <element signature="e#3178#3179#0" expanded="true" />
+                <element signature="e#3266#3267#0" expanded="true" />
+                <element signature="e#3347#3348#0" expanded="true" />
+                <element signature="e#3388#3389#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="GameController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/game/GameController.java">
+        <entry file="file://$PROJECT_DIR$/src/program/game/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7769">
-              <caret line="490" column="0" lean-forward="false" selection-start-line="490" selection-start-column="0" selection-end-line="490" selection-end-column="0" />
+            <state relative-caret-position="-6374">
+              <caret line="70" column="26" lean-forward="false" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,11 +210,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Constants.java">
+      <file leaf-file-name="GameUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/program/game/GameUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+            <state relative-caret-position="749">
+              <caret line="203" column="0" lean-forward="true" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Direction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/program/game/Direction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlockEnum.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/program/game/BlockEnum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="43" lean-forward="false" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageLoader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/program/pictures/ImageLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="49" lean-forward="false" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -214,39 +290,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sample/menu.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/Lko.java" />
-        <option value="$PROJECT_DIR$/src/sample/Tvar.java" />
-        <option value="$PROJECT_DIR$/src/sample/LkoNormal.java" />
-        <option value="$PROJECT_DIR$/src/sample/score.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/Kosticka.java" />
-        <option value="$PROJECT_DIR$/src/sample/KostickaEnum.java" />
-        <option value="$PROJECT_DIR$/src/sample/options.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/OptionsController.java" />
-        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/Tvar.java" />
-        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/Trubka.java" />
-        <option value="$PROJECT_DIR$/src/sample/Smer.java" />
-        <option value="$PROJECT_DIR$/src/sample/Score.java" />
-        <option value="$PROJECT_DIR$/src/sample/score1.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/HighScoreItem.java" />
-        <option value="$PROJECT_DIR$/src/sample/ScoreController.java" />
-        <option value="$PROJECT_DIR$/src/sample/game.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/ArrayUtils.java" />
-        <option value="$PROJECT_DIR$/src/sample/GameUtils.java" />
-        <option value="$PROJECT_DIR$/src/sample/GameController.java" />
         <option value="$PROJECT_DIR$/src/sample/Controller.java" />
         <option value="$PROJECT_DIR$/src/sample/game/Smer.java" />
         <option value="$PROJECT_DIR$/src/sample/game/KostickaEnum.java" />
         <option value="$PROJECT_DIR$/src/sample/Transformace.java" />
-        <option value="$PROJECT_DIR$/src/sample/game/Kosticka.java" />
         <option value="$PROJECT_DIR$/src/sample/score/HighScoreItem.java" />
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
-        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/Ctverec.java" />
-        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/LkoMirror.java" />
-        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/LkoNormal.java" />
-        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/TkoKosticka.java" />
-        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/ZkoMirror.java" />
-        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/ZkoNormal.java" />
         <option value="$PROJECT_DIR$/src/sample/game/game.fxml" />
         <option value="$PROJECT_DIR$/src/sample/options/OptionsController.java" />
         <option value="$PROJECT_DIR$/src/sample/menu/menu.fxml" />
@@ -258,6 +307,40 @@
         <option value="$PROJECT_DIR$/src/sample/score/ScoreController.java" />
         <option value="$PROJECT_DIR$/HighScore.txt" />
         <option value="$PROJECT_DIR$/src/sample/menu/Controller.java" />
+        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/Ctverec.java" />
+        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/Square.java" />
+        <option value="$PROJECT_DIR$/src/sample/game/Kosticka.java" />
+        <option value="$PROJECT_DIR$/src/sample/game/Cube.java" />
+        <option value="$PROJECT_DIR$/src/sample/game/Block.java" />
+        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/LkoMirror.java" />
+        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/MirrorL.java" />
+        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/LkoNormal.java" />
+        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/NormalL.java" />
+        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/TkoKosticka.java" />
+        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/Tvar.java" />
+        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/Shape.java" />
+        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/ZkoMirror.java" />
+        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/MirrorZ.java" />
+        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/ZkoNormal.java" />
+        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/NormalZ.java" />
+        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/BlockT.java" />
+        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/ShapeT.java" />
+        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/Trubka.java" />
+        <option value="$PROJECT_DIR$/src/sample/tvarykosticek/Tube.java" />
+        <option value="$PROJECT_DIR$/src/sample/block_shapes/Tube.java" />
+        <option value="$PROJECT_DIR$/src/program/block_shapes/Tube.java" />
+        <option value="$PROJECT_DIR$/src/program/Constants.java" />
+        <option value="$PROJECT_DIR$/src/program/game/KostickaEnum.java" />
+        <option value="$PROJECT_DIR$/src/program/game/BlockEnum.java" />
+        <option value="$PROJECT_DIR$/src/program/game/GameController.java" />
+        <option value="$PROJECT_DIR$/src/program/game/GameUtils.java" />
+        <option value="$PROJECT_DIR$/src/program/game/Smer.java" />
+        <option value="$PROJECT_DIR$/src/program/game/Direction.java" />
+        <option value="$PROJECT_DIR$/src/program/pictures/ImageLoader.java" />
+        <option value="$PROJECT_DIR$/src/program/score/HighScoreItem.java" />
+        <option value="$PROJECT_DIR$/src/program/score/Score.java" />
+        <option value="$PROJECT_DIR$/src/program/score/ScoreController.java" />
+        <option value="$PROJECT_DIR$/src/program/menu/Controller.java" />
       </list>
     </option>
   </component>
@@ -303,60 +386,55 @@
             <path>
               <item name="Tetris" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tetris" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tetris" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tetris" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tetris" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tetris" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
+              <item name="program" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tetris" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tetris" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
+              <item name="program" type="462c0819:PsiDirectoryNode" />
+              <item name="block_shapes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tetris" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tetris" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="program" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tetris" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tetris" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
+              <item name="program" type="462c0819:PsiDirectoryNode" />
               <item name="menu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tetris" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tetris" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-              <item name="obrazky" type="462c0819:PsiDirectoryNode" />
+              <item name="program" type="462c0819:PsiDirectoryNode" />
+              <item name="pictures" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tetris" type="b2602c69:ProjectViewProjectNode" />
               <item name="Tetris" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
+              <item name="program" type="462c0819:PsiDirectoryNode" />
               <item name="score" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tetris" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tetris" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="sample" type="462c0819:PsiDirectoryNode" />
-              <item name="tvarykosticek" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
@@ -371,7 +449,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Slovníček" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -411,11 +489,11 @@
     <configuration name="Main" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" runner="idea">
         <pattern>
-          <option name="PATTERN" value="sample.tvarykosticek.*" />
+          <option name="PATTERN" value="program.block_shapes.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <option name="MAIN_CLASS_NAME" value="program.Main" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -559,7 +637,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25373134" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2563966" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -574,7 +653,6 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="92" y="92" width="1736" height="856" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.327252" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -629,7 +707,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/score/ScoreController.java">
+    <entry file="file://$PROJECT_DIR$/src/program/score/ScoreController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
           <caret line="78" column="47" lean-forward="true" selection-start-line="78" selection-start-column="47" selection-end-line="78" selection-end-column="47" />
@@ -637,7 +715,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Constants.java">
+    <entry file="file://$PROJECT_DIR$/src/program/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="46" lean-forward="true" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
@@ -645,7 +723,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/score/Score.java">
+    <entry file="file://$PROJECT_DIR$/src/program/score/Score.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
@@ -653,7 +731,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/game/GameController.java">
+    <entry file="file://$PROJECT_DIR$/src/program/game/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
@@ -663,7 +741,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/program/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
@@ -671,14 +749,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/score.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/sample/score/ScoreController.java">
+    <entry file="file://$PROJECT_DIR$/src/program/score/ScoreController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/game/GameController.java">
+    <entry file="file://$PROJECT_DIR$/src/program/game/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="24" column="22" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="25" selection-end-column="26" />
@@ -688,7 +766,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/game/Kosticka.java">
+    <entry file="file://$PROJECT_DIR$/src/program/game/Block.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
@@ -696,14 +774,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Transformace.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/menu/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/program/menu/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/program/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
@@ -711,7 +789,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/sample/menu/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/program/menu/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
@@ -730,56 +808,108 @@
     <entry file="file://$PROJECT_DIR$/src/obrazky/LkoKosticka.png" />
     <entry file="file://$PROJECT_DIR$/src/sample/Transformace.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/game.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/sample/tvarykosticek/Ctverec.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/options/OptionsController.java" />
+    <entry file="file://$PROJECT_DIR$/src/program/menu/menu.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sample/obrazky/OptionsButton.png" />
+    <entry file="file://$PROJECT_DIR$/HighScore.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/program/block_shapes/Square.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/program/block_shapes/NormalL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/program/block_shapes/Shape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="32" column="26" lean-forward="false" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/program/block_shapes/MirrorZ.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/program/block_shapes/NormalZ.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/program/block_shapes/ShapeT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/program/block_shapes/Tube.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/program/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/program/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+          <caret line="21" column="0" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="21" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/tvarykosticek/LkoMirror.java">
+    <entry file="file://$PROJECT_DIR$/src/program/block_shapes/MirrorL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="68" lean-forward="false" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
+        <state relative-caret-position="306">
+          <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/tvarykosticek/LkoNormal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="68" lean-forward="false" selection-start-line="18" selection-start-column="68" selection-end-line="18" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/tvarykosticek/ZkoMirror.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/tvarykosticek/ZkoNormal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" column="38" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/tvarykosticek/Trubka.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/game/KostickaEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/game/game.fxml">
+    <entry file="file://$PROJECT_DIR$/src/program/game/game.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
@@ -790,78 +920,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/options/OptionsController.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/menu/menu.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+    <entry file="file://$PROJECT_DIR$/src/program/game/GameController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6374">
+          <caret line="70" column="26" lean-forward="false" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
           <folding>
-            <marker date="1537203314666" expanded="true" signature="1593:1629" ph="..." />
-            <marker date="1537203314666" expanded="true" signature="1593:1615" ph="..." />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sample/obrazky/OptionsButton.png" />
-    <entry file="file://$PROJECT_DIR$/src/sample/obrazky/ImageLoader.java">
+    <entry file="file://$PROJECT_DIR$/src/program/game/GameUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="749">
+          <caret line="203" column="0" lean-forward="true" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/game/Smer.java">
+    <entry file="file://$PROJECT_DIR$/src/program/game/Direction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="24" lean-forward="false" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        <state relative-caret-position="204">
+          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/score/Score.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="27" column="12" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/score/ScoreController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/tvarykosticek/TkoKosticka.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="3" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="21" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HighScore.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/score/HighScoreItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/game/Kosticka.java">
+    <entry file="file://$PROJECT_DIR$/src/program/game/Block.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
@@ -869,57 +956,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/tvarykosticek/Tvar.java">
+    <entry file="file://$PROJECT_DIR$/src/program/game/BlockEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="43" lean-forward="false" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/program/pictures/ImageLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="49" lean-forward="false" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/program/score/Score.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="33" column="12" lean-forward="false" selection-start-line="33" selection-start-column="12" selection-end-line="33" selection-end-column="12" />
+          <folding>
+            <element signature="e#2575#2576#0" expanded="true" />
+            <element signature="e#2614#2615#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/program/score/ScoreController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding>
+            <element signature="e#3178#3179#0" expanded="true" />
+            <element signature="e#3266#3267#0" expanded="true" />
+            <element signature="e#3347#3348#0" expanded="true" />
+            <element signature="e#3388#3389#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/program/score/HighScoreItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+          <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/game/GameUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/program/menu/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2278">
-          <caret line="141" column="20" lean-forward="false" selection-start-line="141" selection-start-column="20" selection-end-line="141" selection-end-column="20" />
+        <state relative-caret-position="681">
+          <caret line="141" column="0" lean-forward="true" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/game/GameController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7769">
-          <caret line="490" column="0" lean-forward="false" selection-start-line="490" selection-start-column="0" selection-end-line="490" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="21" column="28" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="21" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/menu/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="84" column="5" lean-forward="true" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2787#2803#0" expanded="true" />
+            <element signature="e#1819#1820#0" expanded="true" />
+            <element signature="e#1850#1851#0" expanded="true" />
+            <element signature="e#1970#1971#0" expanded="true" />
+            <element signature="e#2051#2052#0" expanded="true" />
+            <element signature="e#2095#2096#0" expanded="true" />
+            <element signature="e#2136#2137#0" expanded="true" />
+            <element signature="e#4887#4888#0" expanded="true" />
+            <element signature="e#4940#4941#0" expanded="true" />
           </folding>
         </state>
       </provider>
