@@ -36,6 +36,7 @@ public class GameUtils {
         return copy;
     }
 
+
     /**
      * TODO
      */
@@ -44,24 +45,25 @@ public class GameUtils {
     }
 
       /**
+       * TODO
      * pokusi se vlozit kostku do hraciho pole
-     * @param kostka kostka
-     * @param zdroj puvodni hraci pole
-     * @param novePole hraci pole pro vlozeni kostky
+     * @param shape kostka
+     * @param oldGameBoard puvodni hraci pole
+     * @param newGameBoard hraci pole pro vlozeni kostky
      * @param direction direction posunu
      * @return
      */
-    public static blockInsertStatus insertBlock(Shape kostka, Block[][] zdroj, Block[][] novePole, Direction direction) {
+    public static blockInsertStatus insertBlock(Shape shape, Block[][] oldGameBoard, Block[][] newGameBoard, Direction direction) {
 
-        int x = kostka.getX() + direction.getX(); //změna souřednic
-        int y = kostka.getY() + direction.getY();
+        int x = shape.getX() + direction.getX(); //změna souřednic
+        int y = shape.getY() + direction.getY();
 
         blockInsertStatus status = blockInsertStatus.OK;
 
-        loop: for (int radek = 0; radek < kostka.getShape().length; radek++) {
-            for (int sloupec = 0; sloupec < kostka.getShape()[radek].length; sloupec++) {
+        loop: for (int row = 0; row < shape.getShape().length; row++) {
+            for (int col = 0; col < shape.getShape()[row].length; col++) {
 
-                if (kostka.getShape()[radek][sloupec] == null) {     // kontrola zda ma kostka na danem miste kosticku
+                if (shape.getShape()[row][col] == null) {     // kontrola zda ma kostka na danem miste kosticku
                     /*
                      * Aby se kostka nezasekla prazdnym mistem, tak jej ignorovat.
                      * [.][.]
@@ -75,18 +77,18 @@ public class GameUtils {
                     continue;
                 }
 
-                if (sloupec + x >= zdroj[0].length || sloupec + x < 0) {                    //kontrola jestli kostka nenarazila na levou nebo pravou stěnou
+                if (col + x >= oldGameBoard[0].length || col + x < 0) {                    //kontrola jestli kostka nenarazila na levou nebo pravou stěnou
                     status = blockInsertStatus.COLLISION_WITH_WALL;
                     break loop;
                 }
 
-                if (radek + y == zdroj.length) {                                            //kontrola jestli kostka nedopadla ke spodní hraně
+                if (row + y == oldGameBoard.length) {                                            //kontrola jestli kostka nedopadla ke spodní hraně
                     status = blockInsertStatus.COLLISION_WITH_END;
                     break loop;
                 }
 
-                if (zdroj[radek + y][sloupec + x] == null) {                                //kontrola jestli na místě kam se má posunout kostka je místo
-                    novePole[radek + y][sloupec + x] = kostka.getShape()[radek][sloupec];
+                if (oldGameBoard[row + y][col + x] == null) {                                //kontrola jestli na místě kam se má posunout kostka je místo
+                    newGameBoard[row + y][col + x] = shape.getShape()[row][col];
                 } else {
                     if (direction != Direction.DOWN) {
                         status = blockInsertStatus.COLLISION_WITH_OTHER_BLOCK_FROM_SIDE;
@@ -102,6 +104,7 @@ public class GameUtils {
     }
 
     /**
+     * TODO
      * vynasobi 2 matice
      * @param matrix1
      * @param matrix2
@@ -123,6 +126,7 @@ public class GameUtils {
     }
 
     /**
+     * TODO
      * umaze lineNumber z matice
      * @param lineNumber lineNumber ke smazani
      * @param gameBoard
@@ -134,6 +138,7 @@ public class GameUtils {
     }
 
     /**
+     * TODO
      * posune kosticky, tak aby se vyplnil prazdny radek
      * @param emptyLine souradnice prazdneho radku
      * @param gameBoard hraci pole
@@ -151,6 +156,7 @@ public class GameUtils {
     }
 
     /**
+     * TODO
      * zkontroluje, jestli neni gameOver
      * @param gameBoard hraci pole ke kontrole
      * @return true pokud nastal gameOver jinak false
@@ -165,11 +171,12 @@ public class GameUtils {
     }
 
     /**
+     * TODO
      * vygeneruje náhodnou kostičku
      * @param blocksImages mapa pro obrázky kostiček
      * @return vrací náhodnou kostičku
      */
-    public static Shape generateRandomBlock(Map<BlockEnum, Image> blocksImages) {
+    public static Shape generateRandomShape(Map<BlockEnum, Image> blocksImages) {
         Random random = new Random();
         int randomIndex = random.nextInt(NUMBER_OF_BLOCKS);
         Image randomColor = randomColor(blocksImages);  //nastaví náhodnou barvu pro kosticky
@@ -195,6 +202,7 @@ public class GameUtils {
     }
 
     /**
+     * TODO
      * nastaví náhodnou barvu
      * @param blocksImages
      * @return
@@ -202,7 +210,6 @@ public class GameUtils {
     public static Image randomColor(Map<BlockEnum, Image> blocksImages) {
         Random random = new Random();
         int randomIndex = random.nextInt(NUMBER_OF_COLORS);
-
         return blocksImages.get(BlockEnum.values()[randomIndex]);
     }
 
