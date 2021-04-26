@@ -11,12 +11,12 @@ import program.game.Block;
  */
 public class ShapeT extends Shape {
     public ShapeT(Image image) {
-        super(image); //zavola konstruktor predka
+        super(image);
         this.shape = new Block[][] {
-                {null,null,null,null},
-                {null,null,null,null},
-                {null,new Block(image),null,null},
-                {new Block(image),new Block(image),new Block(image),null},
+                {null,                  null,                   null,               null},
+                {null,                  null,                   null,               null},
+                {null,                  new Block(image),       null,               null},
+                {new Block(image),      new Block(image),       new Block(image),   null},
         };
     }
 }

@@ -22,6 +22,8 @@ public class Constants {
         {1,0}
     };
 
+    public static final int SHAPE_NUM_OF_BLOCKS = 4;
+
     public static final int SCORE_LEVEL_2 = 2000;
     public static final int SCORE_LEVEL_3 = 5000;
     public static final int SCORE_LEVEL_4 = 10000;

@@ -21,10 +21,10 @@
             <Font size="21.0" />
          </font>
       </Label>
-      <ImageView fx:id="backButton" fitHeight="77.0" fitWidth="105.0" layoutX="441.0" layoutY="667.0" onMouseClicked="#backButtonAction" onMouseEntered="#backClickButton" onMouseExited="#backReleaseButton" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="56.0" AnchorPane.rightAnchor="39.0" />
+      <ImageView fx:id="backButton" fitHeight="77.0" fitWidth="105.0" layoutX="441.0" layoutY="667.0" onMouseClicked="#backButtonAction" onMouseEntered="#onMouseEnterBackButton" onMouseExited="#onMouseLeaveBackButton" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="56.0" AnchorPane.rightAnchor="39.0" />
       <ImageView fx:id="frame" fitHeight="610.0" fitWidth="310.0" layoutX="256.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="30.0" />
       <ImageView fitHeight="120.0" fitWidth="90.0" layoutX="43.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="howToPlay" fitHeight="500.0" fitWidth="200.0" layoutX="33.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="30.0" />
-      <ImageView fx:id="retryButton" fitHeight="77.0" fitWidth="71.0" layoutX="177.0" layoutY="583.0" onMouseClicked="#retryButtonAction" onMouseEntered="#retryClickButton" onMouseExited="#retryReleaseButton" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="56.0" AnchorPane.rightAnchor="189.0" />
+      <ImageView fx:id="retryButton" fitHeight="77.0" fitWidth="71.0" layoutX="177.0" layoutY="583.0" onMouseClicked="#retryButtonAction" onMouseEntered="#onMouseEnterRetryButton" onMouseExited="#onMouseLeaveRetryButton" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="56.0" AnchorPane.rightAnchor="189.0" />
    </children>
 </AnchorPane>

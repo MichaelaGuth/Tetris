@@ -13,10 +13,10 @@ public class MirrorZ extends Shape {
     public MirrorZ(Image image) {
         super(image); //zavola konstruktor predka
         this.shape = new Block[][] {
-                {null,null,null,null},
-                {null,null,null,null},
-                {null,new Block(image),new Block(image),null},
-                {new Block(image),new Block(image),null,null},
+                {null,                  null,                   null,                   null},
+                {null,                  null,                   null,                   null},
+                {null,                  new Block(image),       new Block(image),       null},
+                {new Block(image),      new Block(image),       null,                   null},
         };
 
     }

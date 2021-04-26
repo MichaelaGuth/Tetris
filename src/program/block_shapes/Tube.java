@@ -11,12 +11,12 @@ import program.game.Block;
  */
 public class Tube extends Shape {
     public Tube(Image image) {
-        super(image); //zavola konstruktor predka
+        super(image);
         this.shape = new Block[][] {
-                {new Block(image),null,null,null},
-                {new Block(image),null,null,null},
-                {new Block(image),null,null,null},
-                {new Block(image),null,null,null}
+                {new Block(image),  null,   null,   null},
+                {new Block(image),  null,   null,   null},
+                {new Block(image),  null,   null,   null},
+                {new Block(image),  null,   null,   null}
         };
 
     }

@@ -14,6 +14,7 @@ public abstract class Shape {
     protected Block[][] shape;
     protected int x = Constants.GAME_NUMBER_OF_COLUMNS / 2;
     protected int y = Constants.INITIAL_COORDINATES;
+    protected final int SHAPE_SIZE = 4;
 
     public Shape(Image image) {
         this.image = image;
@@ -29,10 +30,16 @@ public abstract class Shape {
         this.shape = shape;
     }
 
+    /**
+     * TODO
+     * @return
+     */
     public int[][] getBody() {
+
         int[][] souradnice = new int[2][4];
         int k = 0;
         Block[][] kostka = getShape();
+
         for (int j = 0; j<kostka[0].length; j++) {
             for (int i = 0; i<kostka.length; i++) {
                 Block bod = kostka[i][j];
@@ -43,15 +50,24 @@ public abstract class Shape {
                 }
             }
         }
+
         return souradnice;
     }
 
-    public Block[][] createTvar(int[][] souradnice) {
-        Block[][] tvar = new Block[4][4];      //TODO 4 = konstanta
-        for (int sloupec = 0; sloupec < souradnice[0].length; sloupec++) {
-            tvar[souradnice[0][sloupec]][souradnice[1][sloupec]] = new Block(image);
+    /**
+     * TODO
+     * @param coordinates
+     * @return
+     */
+    public Block[][] createShape(int[][] coordinates) {
+
+        Block[][] shape = new Block[SHAPE_SIZE][SHAPE_SIZE];
+
+        for (int col = 0; col < coordinates[0].length; col++) {
+            shape[coordinates[0][col]][coordinates[1][col]] = new Block(image);
         }
-        return tvar;
+
+        return shape;
     }
 
     public int getX() {

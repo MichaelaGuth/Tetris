@@ -13,10 +13,10 @@ public class NormalZ extends Shape {
     public NormalZ(Image image) {
         super(image);
         this.shape = new Block[][] {
-                {null,null,null,null},
-                {null,null,null,null},
-                {new Block(image),new Block(image),null,null},
-                {null,new Block(image),new Block(image), null},
+                {null,                  null,                   null,               null},
+                {null,                  null,                   null,               null},
+                {new Block(image),      new Block(image),       null,               null},
+                {null,                  new Block(image),       new Block(image),   null},
         };
     }
 }

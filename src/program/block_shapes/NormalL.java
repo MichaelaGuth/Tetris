@@ -13,10 +13,10 @@ public class NormalL extends Shape {
     public NormalL(Image image) {
         super(image); //zavola konstruktor predka
         this.shape = new Block[][] {
-                {null,null,null,null},
-                {new Block(image),null,null,null},
-                {new Block(image),null,null,null},
-                {new Block(image),new Block(image),null,null},
+                {null,                  null,               null,   null},
+                {new Block(image),      null,               null,   null},
+                {new Block(image),      null,               null,   null},
+                {new Block(image),      new Block(image),   null,   null},
         };
     }
 

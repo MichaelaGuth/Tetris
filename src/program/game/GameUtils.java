@@ -16,23 +16,31 @@ import static program.Constants.NUMBER_OF_BLOCKS;
  * Time: 18:10
  */
 public class GameUtils {
+
     /**
+     * TODO
      * zkopíruje pole kostiček
      * @param src
      * @return
      */
     public static Block[][] copy(Block src[][]) {
         Block[][] copy = new Block[src.length][src[0].length];
-        for (int i = 0; i<src.length; i++) {
-            for (int j = 0; j<src[0].length; j++) {
+
+        for (int i = 0; i < src.length; i++) {
+
+            for (int j = 0; j < src[0].length; j++) {
                 copy[i][j] = src[i][j];
             }
         }
+
         return copy;
     }
 
-    public enum VlozeniKostkyStatus {
-        OK, KOLIZE_SE_STENOU, KOLIZE_S_KONCEM, KOLIZE_S_KOSTKOU_ZE_STRANY
+    /**
+     * TODO
+     */
+    public enum blockInsertStatus {
+        OK, COLLISION_WITH_WALL, COLLISION_WITH_END, COLLISION_WITH_OTHER_BLOCK_FROM_SIDE
     }
 
       /**
@@ -43,12 +51,12 @@ public class GameUtils {
      * @param direction direction posunu
      * @return
      */
-    public static VlozeniKostkyStatus vlozeniKosticky(Shape kostka, Block[][] zdroj, Block[][] novePole, Direction direction) {
+    public static blockInsertStatus insertBlock(Shape kostka, Block[][] zdroj, Block[][] novePole, Direction direction) {
 
         int x = kostka.getX() + direction.getX(); //změna souřednic
         int y = kostka.getY() + direction.getY();
 
-        VlozeniKostkyStatus status = VlozeniKostkyStatus.OK;
+        blockInsertStatus status = blockInsertStatus.OK;
 
         loop: for (int radek = 0; radek < kostka.getShape().length; radek++) {
             for (int sloupec = 0; sloupec < kostka.getShape()[radek].length; sloupec++) {
@@ -68,12 +76,12 @@ public class GameUtils {
                 }
 
                 if (sloupec + x >= zdroj[0].length || sloupec + x < 0) {                    //kontrola jestli kostka nenarazila na levou nebo pravou stěnou
-                    status = VlozeniKostkyStatus.KOLIZE_SE_STENOU;
+                    status = blockInsertStatus.COLLISION_WITH_WALL;
                     break loop;
                 }
 
                 if (radek + y == zdroj.length) {                                            //kontrola jestli kostka nedopadla ke spodní hraně
-                    status = VlozeniKostkyStatus.KOLIZE_S_KONCEM;
+                    status = blockInsertStatus.COLLISION_WITH_END;
                     break loop;
                 }
 
@@ -81,9 +89,9 @@ public class GameUtils {
                     novePole[radek + y][sloupec + x] = kostka.getShape()[radek][sloupec];
                 } else {
                     if (direction != Direction.DOWN) {
-                        status = VlozeniKostkyStatus.KOLIZE_S_KOSTKOU_ZE_STRANY;
+                        status = blockInsertStatus.COLLISION_WITH_OTHER_BLOCK_FROM_SIDE;
                     } else {
-                        status = VlozeniKostkyStatus.KOLIZE_S_KONCEM;
+                        status = blockInsertStatus.COLLISION_WITH_END;
                     }
                     break loop;
                 }
@@ -143,9 +151,9 @@ public class GameUtils {
     }
 
     /**
-     * zkontroluje, jestli neni GameOver
+     * zkontroluje, jestli neni gameOver
      * @param gameBoard hraci pole ke kontrole
-     * @return true pokud nastal GameOver jinak false
+     * @return true pokud nastal gameOver jinak false
      */
     public static boolean checkGameOver(Block[][] gameBoard) {
         for (int col = 0; col < gameBoard[0].length; col++) {
