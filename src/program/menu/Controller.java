@@ -14,42 +14,46 @@ import program.pictures.ImageLoader;
 import program.score.ScoreController;
 
 public class Controller {
-    public AnchorPane Pain;
-    public ImageView singleplayerButton;
-    public ImageView multiplayerButton;
+    public AnchorPane anchorPane;
+    public ImageView singlePlayerButton;
+    public ImageView multiPlayerButton;
     public ImageView highScoresButton;
     public ImageView exitButton;
-    public Image singleplayer;
-    public Image multiplayer;
-    public Image highscores;
+    public Image singlePlayerImage;
+    public Image multiPlayerImage;
+    public Image highScoreImage;
     public Image exit;
-    public static int pocethracu;
+    public static int numberOfPlayers;
 
     /**
+     * TODO: make constants with file names
+     * TODO: handle exception
      * načtení obrázků
      */
     @FXML
     public void initialize() throws Exception {
+
         Image image = ImageLoader.LoadImage("MenuBackground.png");
         BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
         BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
         Background background = new Background(backgroundImage);
-        Pain.setBackground(background);
+        anchorPane.setBackground(background);
 
-        singleplayer = ImageLoader.LoadImage("SinglePlayerButton.png");
-        singleplayerButton.setImage(singleplayer);
+        singlePlayerImage = ImageLoader.LoadImage("SinglePlayerButton.png");
+        singlePlayerButton.setImage(singlePlayerImage);
 
-        multiplayer = ImageLoader.LoadImage("MultiplayerButton.png");
-        multiplayerButton.setImage(multiplayer);
+        multiPlayerImage = ImageLoader.LoadImage("MultiplayerButton.png");
+        multiPlayerButton.setImage(multiPlayerImage);
 
-        highscores = ImageLoader.LoadImage("HighScoreButton.png");
-        highScoresButton.setImage(highscores);
+        highScoreImage = ImageLoader.LoadImage("HighScoreButton.png");
+        highScoresButton.setImage(highScoreImage);
 
         exit = ImageLoader.LoadImage("ExitButton.png");
         exitButton.setImage(exit);
     }
 
     /**
+     * TODO
      * ukončí program
      */
     public void exitButtonAction() {
@@ -57,6 +61,7 @@ public class Controller {
     }
 
     /**
+     * TODO
      * při najetí kurzorem myši na tlačítko - změna obrázku
      */
     public void onMouseEnterExitButton() {
@@ -68,11 +73,12 @@ public class Controller {
     }
 
     /**
+     * TODO: handle exception
      * přepne obrazovku na harcí plán, nastaví počet hráčů na 1
      * @throws Exception
      */
-    public void singleplayerButtonAction() throws Exception {
-        pocethracu = 1;
+    public void singlePlayerButtonAction() throws Exception {
+        numberOfPlayers = 1;
 
         FXMLLoader fxmlLoader = new FXMLLoader(GameController.class.getResource("game.fxml"));
         Parent root = fxmlLoader.load();
@@ -84,23 +90,28 @@ public class Controller {
     }
 
     /**
+     * TODO
      * při najetí kurzorem myši na tlačítko - změna obrázku
      */
-    public void singleplayerClickButton() {
-        Image SinglePlayerclick = ImageLoader.LoadImage("SinglePlayerClickButton.png");
-        singleplayerButton.setImage(SinglePlayerclick);
-    }
-
-    public void singleplayerReleaseButton() {
-        singleplayerButton.setImage(singleplayer);
+    public void onMouseEnterSinglePlayerButton() {
+        Image image = ImageLoader.LoadImage("SinglePlayerClickButton.png");
+        singlePlayerButton.setImage(image);
     }
 
     /**
+     * TODO
+     */
+    public void onMouseLeaveSinglePlayerButton() {
+        singlePlayerButton.setImage(singlePlayerImage);
+    }
+
+    /**
+     * TODO: handle exception
      * přepne obrazovku na harcí plán, nastaví počet hráčů na 1
      * @throws Exception
      */
-    public void multiplayerButtonAction() throws Exception {
-        pocethracu = 2;
+    public void multiPlayerButtonAction() throws Exception {
+        numberOfPlayers = 2;
 
         FXMLLoader fxmlLoader = new FXMLLoader(GameController.class.getResource("game.fxml"));
         Parent root = fxmlLoader.load();
@@ -114,33 +125,38 @@ public class Controller {
     /**
      * při najetí kurzorem myši na tlačítko - změna obrázku
      */
-    public void multiplayerClickButton() {
-        Image Multiplayerclick = ImageLoader.LoadImage("MultiplayerClickButton.png");
-        multiplayerButton.setImage(Multiplayerclick);
+    public void onMouseEnterMultiPlayerButton() {
+        Image image = ImageLoader.LoadImage("MultiplayerClickButton.png");
+        multiPlayerButton.setImage(image);
     }
 
-    public void multiplayerReleaseButton() {
-        multiplayerButton.setImage(multiplayer);
+    public void onMouseLeaveMultiPlayerButton() {
+        multiPlayerButton.setImage(multiPlayerImage);
     }
 
     /**
+     * TODO: handle exception
      * přepne obrazovku na Score Board
      * @throws Exception
      */
     public void highScoresButtonAction() throws Exception {
-        Parent root = FXMLLoader.load(ScoreController.class.getResource("score1.fxml"));    //načtení popisu scény
-        Main.stage.setScene(new Scene(root, 600, 800));                 //vytvoření scény a nastavení zobrazení
+        Parent root = FXMLLoader.load(ScoreController.class.getResource("score1.fxml"));        //načtení popisu scény
+        Main.stage.setScene(new Scene(root, 600, 800));                                 //vytvoření scény a nastavení zobrazení
         Main.stage.show();
     }
 
     /**
+     * TODO
      * při najetí kurzorem myši na tlačítko - změna obrázku
      */
     public void onMouseEnterHighScoreButton() {
         highScoresButton.setImage(ImageLoader.LoadImage("HighScoreClickButton.png"));
     }
 
+    /**
+     * TODO
+     */
     public void highScoreReleaseButton() {
-        highScoresButton.setImage(highscores);
+        highScoresButton.setImage(highScoreImage);
     }
 }

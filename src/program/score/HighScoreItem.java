@@ -10,37 +10,37 @@ import javafx.beans.property.SimpleStringProperty;
  * Time: 12:16
  */
 public class HighScoreItem {
-    private SimpleStringProperty Rank;
-    private SimpleStringProperty PlayerName;
-    private SimpleIntegerProperty HighScore;
+    private SimpleStringProperty rank;
+    private SimpleStringProperty playerName;
+    private SimpleIntegerProperty highScore;
 
     public HighScoreItem(String playerName, int highScore) {
-        PlayerName = new SimpleStringProperty(playerName);
-        HighScore = new SimpleIntegerProperty(highScore);
-        Rank = new SimpleStringProperty("0");
+        this.playerName = new SimpleStringProperty(playerName);
+        this.highScore = new SimpleIntegerProperty(highScore);
+        rank = new SimpleStringProperty("0");
     }
 
     public String getRank() {
-        return Rank.get();
+        return rank.get();
     }
 
     public void setRank(String rank) {
-        this.Rank.set(rank);
+        this.rank.set(rank);
     }
 
     public String getPlayerName() {
-        return PlayerName.get();
+        return playerName.get();
     }
 
     public void setPlayerName(String playerName) {
-        this.PlayerName.set(playerName);
+        this.playerName.set(playerName);
     }
 
     public int getHighScore() {
-        return HighScore.get();
+        return highScore.get();
     }
 
     public void setHighScore(int highScore) {
-        this.HighScore.set(highScore);
+        this.highScore.set(highScore);
     }
 }

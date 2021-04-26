@@ -5,15 +5,15 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="Pain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.score.ScoreController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="program.score.ScoreController">
     <children>
-        <TableView fx:id="Table" layoutX="50.0" layoutY="30.0" prefHeight="635.0" prefWidth="500.0">
+        <TableView fx:id="tableView" layoutX="50.0" layoutY="30.0" prefHeight="635.0" prefWidth="500.0">
             <columns>
-                <TableColumn fx:id="Ranks" prefWidth="38.0" sortable="false" />
-                <TableColumn fx:id="Players" editable="false" prefWidth="203.0" text="Player " />
-                <TableColumn fx:id="Scores" editable="false" prefWidth="258.0" sortType="DESCENDING" text="High Score" />
+                <TableColumn fx:id="ranks" prefWidth="38.0" sortable="false" />
+                <TableColumn fx:id="players" editable="false" prefWidth="203.0" text="Player " />
+                <TableColumn fx:id="scores" editable="false" prefWidth="258.0" sortType="DESCENDING" text="High Score" />
             </columns>
         </TableView>
-        <ImageView fx:id="BackButton" fitHeight="77.0" fitWidth="120.0" layoutX="240.0" layoutY="679.0" onMouseClicked="#backButtonAction" onMouseEntered="#onMouseEnterBackButton" onMouseExited="#onMouseLeaveBackButton" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="backButton" fitHeight="77.0" fitWidth="120.0" layoutX="240.0" layoutY="679.0" onMouseClicked="#backButtonAction" onMouseEntered="#onMouseEnterBackButton" onMouseExited="#onMouseLeaveBackButton" pickOnBounds="true" preserveRatio="true" />
     </children>
 </AnchorPane>

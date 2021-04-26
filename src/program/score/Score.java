@@ -19,11 +19,12 @@ public class Score {
     }
 
     /**
+     * TODO: handle exception
      * uloží dané skóre do souboru
      * @param highScore skóre
      * @param playerName jméno hráče
      */
-    public void SaveHighScore(int highScore, String playerName) {
+    public void saveHighScore(int highScore, String playerName) {
         FileWriter fw;                                                      //FileWriter je třída, která umožňuje zápis dat do textového souboru
         try {                                                                //try-catch blok pro odchytávání vyjimek v programu. Zde v kodu muze vyjimku vyhodit FileWriter
             fw = new FileWriter(fileName, true);                //Vytvoření instance třídy FileWriter (append = jestli soubor již existuje, bude pokračovat na konci tohoto souboru)
@@ -36,10 +37,11 @@ public class Score {
     }
 
     /**
+     * TODO: handle exceptions
      * přečte textový soubor, uloží ho do textového pole
      * @return textové pole HighScore
      */
-    ArrayList<String> loadScore() {
+    ArrayList<String> loadScore() {                             // package private
         BufferedReader br;                                              // Trida usnadnujici cteni ze souboru, ale pro pouziti potrebuje jeste nejakou tridu Reader jako je FileReader
         ArrayList<String> scores = new ArrayList<>();
         try {
@@ -56,6 +58,7 @@ public class Score {
     }
 
     /**
+     * TODO
      * rozdělí line na dvě části podle ": "
      * @param line řádek, který chceme rozdělit
      * @return rozdělený řádek v textovém poli

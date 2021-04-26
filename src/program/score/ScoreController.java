@@ -27,53 +27,67 @@ import java.util.List;
  * Time: 22:30
  */
 public class ScoreController {
-    public AnchorPane Pain;
-    private Image Back;
-    public ImageView BackButton;
-    public TableView Table;
-    public TableColumn Players;
-    public TableColumn Scores;
-    public TableColumn Ranks;
+    public AnchorPane anchorPane;
+    private Image backButtonImage;
+    public ImageView backButton;
+    public TableView tableView;
+    public TableColumn players;
+    public TableColumn scores;
+    public TableColumn ranks;
 
+    /**
+     * TODO comments + constants + maybe more functions
+     */
     @FXML
     public void initialize() {
+
+        // TODO
         Image image = ImageLoader.LoadImage("TetrisBackground.png");
         BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
         BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
         Background background = new Background(backgroundImage);
-        Pain.setBackground(background);
+        anchorPane.setBackground(background);
 
-        Back = ImageLoader.LoadImage("BackButton.png");
-        BackButton.setImage(Back);
+        // TODO
+        backButtonImage = ImageLoader.LoadImage("backButton.png");
+        backButton.setImage(backButtonImage);
 
+        // TODO
         ArrayList<String> scores;
         Score score = new Score("HighScore.txt");
         scores = score.loadScore();
         List list = new ArrayList();
 
-        Ranks.setCellValueFactory(new PropertyValueFactory("Poradi"));
-        Players.setCellValueFactory(new PropertyValueFactory("JmenoHrace"));
-        Scores.setCellValueFactory(new PropertyValueFactory("HighScore"));
+        // TODO <????
+        ranks.setCellValueFactory(new PropertyValueFactory("Poradi"));
+        players.setCellValueFactory(new PropertyValueFactory("JmenoHrace"));
+        this.scores.setCellValueFactory(new PropertyValueFactory("HighScore"));
 
+        // TODO ???
         for (String line : scores) {
             String[] tmp = score.split(line);
             list.add(new HighScoreItem(tmp[0], Integer.parseInt(tmp[1])));
         }
 
+        // TODO
         ObservableList data = FXCollections.observableList(list);
         SortedList<HighScoreItem> sortedList = new SortedList<HighScoreItem>(data,
                 (HighScoreItem item1, HighScoreItem item2) ->
                 {
                    return item2.getHighScore()-item1.getHighScore();
                 });
+
+        // TODO
         for (int i = 0; i < sortedList.size(); i++) {
             sortedList.get(i).setRank((i+1)+".");
         }
-        Table.setItems(sortedList);
-        //Table.getSortOrder().add(Scores);
+
+        //TODO
+        tableView.setItems(sortedList);
     }
 
     /**
+     * TODO: handle exception + comment
      * pokud stiskneme tlačítko zpět, vrátí nás zpět do menu a vypne timer
      * @throws Exception
      */
@@ -84,16 +98,18 @@ public class ScoreController {
     }
 
     /**
+     * TODO
      * při najetí kurzorem myši na tlačítko - změna obrázku (rozsvícení tlačítka)
      */
     public void onMouseEnterBackButton() {
-        BackButton.setImage(ImageLoader.LoadImage("onMouseEnterBackButton.png"));
+        backButton.setImage(ImageLoader.LoadImage("onMouseEnterBackButton.png"));
     }
 
     /**
+     * TODO
      * změna obrázku
      */
     public void onMouseLeaveBackButton() {
-        BackButton.setImage(Back);
+        backButton.setImage(backButtonImage);
     }
 }

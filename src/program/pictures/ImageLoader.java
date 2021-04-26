@@ -12,16 +12,17 @@ import javafx.scene.image.Image;
 public class ImageLoader {
 
     /**
+     * TODO
      * načte obrázek z daného souboru
      * @param fileName název souboru, kde se nachízí obrázek
      * @return daný obrázek
      */
     public static Image LoadImage(String fileName) {
-        Image image = new Image(ImageLoader.class.getResource(fileName).toExternalForm());
-        return image;
+        return new Image(ImageLoader.class.getResource(fileName).toExternalForm());
     }
 
     /**
+     * TODO
      * načte obrázek z daného souboru v určené velikosti
      * @param fileName název souboru, kde se nachízí obrázek
      * @param width šířka v pixelech
@@ -29,7 +30,12 @@ public class ImageLoader {
      * @return daný obrázek
      */
     public static Image LoadImage(String fileName, int width, int height) {
-        Image image = new Image(ImageLoader.class.getResource(fileName).toExternalForm(),width,height,true,false);
-        return image;
+        return new Image(
+                ImageLoader.class.getResource(fileName).toExternalForm(),
+                width,
+                height,
+                true,
+                false);
     }
+
 }

@@ -110,7 +110,7 @@ public class GameController implements EventHandler<KeyEvent> {
         blockImages.put(BlockEnum.BLOCK_Z, ImageLoader.LoadImage("ZkoKosticka.png", BLOCK_SIZE, BLOCK_SIZE));
 
         //napoveda
-        if (Controller.pocethracu == 1) {
+        if (Controller.numberOfPlayers == 1) {
             Image Singleplayer = ImageLoader.LoadImage("HowToPlaySingleplayer.png");
             howToPlay.setImage(Singleplayer);
         } else {
@@ -127,8 +127,8 @@ public class GameController implements EventHandler<KeyEvent> {
      */
     public void GameInit() {
 
-        currentShape = generateRandomBlock(blockImages);
-        nextShape = generateRandomBlock(blockImages);
+        currentShape = generateRandomShape(blockImages);
+        nextShape = generateRandomShape(blockImages);
 
         gameBoard = new Block[GAME_NUMBER_OF_LINES][GAME_NUMBER_OF_COLUMNS];
 
@@ -250,7 +250,7 @@ public class GameController implements EventHandler<KeyEvent> {
                 // nop
         }
 
-        if (Controller.pocethracu == 2) {   //nastavení kláves pro multiplayer
+        if (Controller.numberOfPlayers == 2) {   //nastavení kláves pro multiPlayerImage
 
             Image randomColor = randomColor(blockImages);
 
@@ -341,7 +341,7 @@ public class GameController implements EventHandler<KeyEvent> {
                 GameUtils.insertBlock(currentShape, gameBoard, copyArray, Direction.NONE);
                 gameBoard = copyArray;
                 currentShape = nextShape;
-                nextShape = generateRandomBlock(blockImages);
+                nextShape = generateRandomShape(blockImages);
                 return false;
         }
 
@@ -557,7 +557,7 @@ public class GameController implements EventHandler<KeyEvent> {
             if (result.isPresent()) {
                 name = result.get().length() < 3 ? "Randomák" : result.get();
                 Score tmp = new Score("HighScore.txt");
-                tmp.SaveHighScore(score,name);
+                tmp.saveHighScore(score,name);
             }
         });
     }
