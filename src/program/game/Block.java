@@ -4,7 +4,7 @@ import javafx.scene.image.Image;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Kimiko
+ * User: MichaelaGuth
  * Date: 22. 8. 2018
  * Time: 21:32
  */

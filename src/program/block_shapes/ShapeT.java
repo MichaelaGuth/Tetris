@@ -5,7 +5,7 @@ import program.game.Block;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Kimiko
+ * User: MichaelaGuth
  * Date: 24. 8. 2018
  * Time: 12:09
  */

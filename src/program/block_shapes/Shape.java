@@ -6,15 +6,18 @@ import program.game.Block;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Kimiko
+ * User: MichaelaGuth
  * Date: 23. 8. 2018
  * Time: 18:48
  */
 public abstract class Shape {
+
     protected Block[][] shape;
-    protected int x = Constants.GAME_NUMBER_OF_COLUMNS / 2;
-    protected int y = Constants.INITIAL_COORDINATES;
-    protected final int SHAPE_SIZE = 4;
+    private int x = Constants.GAME_NUMBER_OF_COLUMNS / 2;
+    private int y = Constants.INITIAL_COORDINATES;
+    protected Image image;
+
+    private final int SHAPE_SIZE = 4;
 
     public Shape(Image image) {
         this.image = image;
@@ -24,40 +27,39 @@ public abstract class Shape {
         return shape;
     }
 
-    protected Image image;
-
     public void setShape(Block[][] shape) {
         this.shape = shape;
     }
 
     /**
-     * TODO
-     * @return
+     * Creates a matrix for rotation.
+     * @return Matrix with coordinates.
      */
     public int[][] getBody() {
 
-        int[][] souradnice = new int[2][4];
+        int[][] coordinates = new int[2][4];
         int k = 0;
-        Block[][] kostka = getShape();
+        Block[][] shape = getShape();
 
-        for (int j = 0; j<kostka[0].length; j++) {
-            for (int i = 0; i<kostka.length; i++) {
-                Block bod = kostka[i][j];
-                if (bod != null) {
-                    souradnice[0][k] = i;
-                    souradnice[1][k] = j;
+        for (int col = 0; col < shape[0].length; col++) {
+            for (int row = 0; row < shape.length; row++) {
+
+                Block block = shape[row][col];
+                if (block != null) {
+                    coordinates[0][k] = row;
+                    coordinates[1][k] = col;
                     k++;
                 }
             }
         }
 
-        return souradnice;
+        return coordinates;
     }
 
     /**
-     * TODO
-     * @param coordinates
-     * @return
+     * Creates a shape from matrix with coordinates.
+     * @param coordinates The matrix with coordinates.
+     * @return Shape in array of Blocks.
      */
     public Block[][] createShape(int[][] coordinates) {
 

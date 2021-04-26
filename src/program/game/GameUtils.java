@@ -11,17 +11,16 @@ import static program.Constants.NUMBER_OF_BLOCKS;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Kimiko
+ * User: MichaelaGuth
  * Date: 26. 8. 2018
  * Time: 18:10
  */
 public class GameUtils {
 
     /**
-     * TODO
-     * zkopíruje pole kostiček
-     * @param src
-     * @return
+     * Creates a copy of given block array.
+     * @param src The given block array.
+     * @return The copy.
      */
     public static Block[][] copy(Block src[][]) {
         Block[][] copy = new Block[src.length][src[0].length];
@@ -31,6 +30,7 @@ public class GameUtils {
             for (int j = 0; j < src[0].length; j++) {
                 copy[i][j] = src[i][j];
             }
+
         }
 
         return copy;
@@ -38,20 +38,19 @@ public class GameUtils {
 
 
     /**
-     * TODO
+     * Enum with status info.
      */
     public enum blockInsertStatus {
         OK, COLLISION_WITH_WALL, COLLISION_WITH_END, COLLISION_WITH_OTHER_BLOCK_FROM_SIDE
     }
 
-      /**
-       * TODO
-     * pokusi se vlozit kostku do hraciho pole
-     * @param shape kostka
-     * @param oldGameBoard puvodni hraci pole
-     * @param newGameBoard hraci pole pro vlozeni kostky
-     * @param direction direction posunu
-     * @return
+    /**
+     * Tries to insert the shape in given game board.
+     * @param shape The shape.
+     * @param oldGameBoard Old game board.
+     * @param newGameBoard New game board.
+     * @param direction The direction where the shape moved.
+     * @return Status of the moved block.
      */
     public static blockInsertStatus insertBlock(Shape shape, Block[][] oldGameBoard, Block[][] newGameBoard, Direction direction) {
 

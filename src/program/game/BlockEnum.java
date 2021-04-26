@@ -2,7 +2,7 @@ package program.game;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Kimiko
+ * User: MichaelaGuth
  * Date: 26. 8. 2018
  * Time: 15:46
  */

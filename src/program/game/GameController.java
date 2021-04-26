@@ -33,7 +33,7 @@ import static program.game.GameUtils.*;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Kimiko
+ * User: MichaelaGuth
  * Date: 22. 8. 2018
  * Time: 22:27
  */
@@ -47,7 +47,7 @@ public class GameController implements EventHandler<KeyEvent> {
 
     public Label scoreLabel;
 
-    public AnchorPane container;
+    public AnchorPane anchorPane;
 
     public ImageView backButton;
     private Image back;
@@ -71,37 +71,43 @@ public class GameController implements EventHandler<KeyEvent> {
     private int scoreLevel;
 
     /**
-     * TODO
-     * načtení herního plánu, nastavení skóre na nula
+     * Initial procedure.
+     * Sets graphic and initial values.
      */
     @FXML
     public void initialize() {
+
+        // Setting Background on Anchor Pane
         Image image = ImageLoader.LoadImage("TetrisBackground.png");
         BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
         BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
         Background background = new Background(backgroundImage);
-        container.setBackground(background);
+        anchorPane.setBackground(background);
 
-        score = 0;                                                      //nastavení skóre na nula
+        // Setting initial value to score
+        score = 0;
         scoreLabel.setText(score+"");
 
+        // Setting Back Button
         back = ImageLoader.LoadImage("ExitButton.png");
         backButton.setImage(back);
 
+        // Setting Retry Button
         retry = ImageLoader.LoadImage("RetryButton.png");
         retryButton.setImage(retry);
 
+        // Setting game board
         playBackground = ImageLoader.LoadImage("Pole.png");
         GraphicsContext gc = gameBoardCanvas.getGraphicsContext2D();
-        gc.drawImage(playBackground,0,0);                           //render hraciho pozadi
-
+        gc.drawImage(playBackground,0,0);
         frame.setImage(ImageLoader.LoadImage("Okrajpole.png"));
 
+        // Setting window for next block
         nextBlockBackground = ImageLoader.LoadImage("NasledujiciKosticka.png");
         GraphicsContext gc2 = block.getGraphicsContext2D();
-        gc2.drawImage(nextBlockBackground,0,0);                     //render hraciho pozadi
+        gc2.drawImage(nextBlockBackground,0,0);                     //draw hraciho pozadi
 
-        //pictures si predem nactu do mapy, aby to bylo rychlejší
+        // Loading pictures into hash map (faster)
         blockImages = new HashMap<>(BlockEnum.values().length);
         blockImages.put(BlockEnum.SQUARE, ImageLoader.LoadImage("CtverecKosticka.png", BLOCK_SIZE, BLOCK_SIZE));
         blockImages.put(BlockEnum.TUBE, ImageLoader.LoadImage("TrubkaKosticka.png", BLOCK_SIZE, BLOCK_SIZE));
@@ -109,73 +115,88 @@ public class GameController implements EventHandler<KeyEvent> {
         blockImages.put(BlockEnum.BLOCK_L, ImageLoader.LoadImage("LkoKosticka.png", BLOCK_SIZE, BLOCK_SIZE));
         blockImages.put(BlockEnum.BLOCK_Z, ImageLoader.LoadImage("ZkoKosticka.png", BLOCK_SIZE, BLOCK_SIZE));
 
-        //napoveda
+        // Setting window for help details
         if (Controller.numberOfPlayers == 1) {
-            Image Singleplayer = ImageLoader.LoadImage("HowToPlaySingleplayer.png");
-            howToPlay.setImage(Singleplayer);
+
+            Image tmp = ImageLoader.LoadImage("HowToPlaySingleplayer.png");
+            howToPlay.setImage(tmp);
+
         } else {
-            Image Multiplayer = ImageLoader.LoadImage("HowToPlayMultiplayer.png");
-            howToPlay.setImage(Multiplayer);
+
+            Image tmp = ImageLoader.LoadImage("HowToPlayMultiplayer.png");
+            howToPlay.setImage(tmp);
+
         }
 
-        GameInit(); //zahájí hru
+        // Starting game.
+        gameInit();
     }
 
     /**
-     * TODO
-     * inicializace hry
+     * Initial procedure.
+     * Sets parameters for a new game. Starts a new game.
      */
-    public void GameInit() {
+    public void gameInit() {
 
+        // Creating shapes.
         currentShape = generateRandomShape(blockImages);
         nextShape = generateRandomShape(blockImages);
 
+        // Setting game board.
         gameBoard = new Block[GAME_NUMBER_OF_LINES][GAME_NUMBER_OF_COLUMNS];
 
-        timeline = new Timeline(new KeyFrame(Duration.millis(INITIAL_FALLING_SPEED),        //vytvoreni TIMERU
-                ae -> gameLoop()));                                                         //ae = Action Event
-        timeline.setCycleCount(Animation.INDEFINITE);                                       //nastavení časovače tak, aby pokračoval, dokud jej něco nevypne
+        // Setting timer and starting game.
+        timeline = new Timeline(new KeyFrame(Duration.millis(INITIAL_FALLING_SPEED),
+                ae -> gameLoop()));
+        timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
 
-        scoreLevel = 1;                                                                     //začíná se na levelu 1
+        // Setting score level.
+        scoreLevel = 1;
     }
 
     /**
-     * TODO
-     * herní operace, který se mají provést v každém tiku timeru
+     * Game loop.
+     * Contains operations that happen regularly with timer while the game is running.
      */
     public void gameLoop() {
 
-        if (checkGameOver(gameBoard)) {                                 //pokud je splněná podmínka gameOver, zavolá funkci gameOver
+        // Checking if the game is over.
+        if (checkGameOver(gameBoard)) {
             gameOver();
         }
 
-        moveCurrentBlock(Direction.DOWN);                               //při každém "tiku" timeru posune kosticku o 1 dolu
+        // Moving current block down.
+        moveCurrentBlock(Direction.DOWN);
 
-        render(block, nextShape.getShape(), nextBlockBackground);       //vykreslí nasledujici kosticku do nahledu
+        // Render the next shape in the next shape window.
+        draw(block, nextShape.getShape(), nextBlockBackground);
 
-        deleteFullLines();                                              //smaže plné řádky
-        scoreLabel.setText(score+"");                                   //vypíše skóre
+        // Deleting full lines.
+        deleteFullLines();
 
-        scoreLevel = timerUp(levelUp(score));                           //nastaví hru podle skóre na daný level
+        // Updating score.
+        scoreLabel.setText(score+"");
+
+        // Setting level
+        scoreLevel = timerUp(levelUp(score));                           // TODO
 
     }
 
     /** TODO: handle exception
-     * pokud stiskneme tlačítko zpět, vrátí nás zpět do menu a vypne timer
+     * Leaves the game back to menu.
      * @throws Exception
      */
     public void backButtonAction() throws Exception {
-        Parent root = FXMLLoader.load(Controller.class.getResource("menu.fxml"));       //načtení popisu scény
-        Main.stage.setScene(new Scene(root, 600, 800));                         //vytvoření scény a nastavení zobrazení
+        Parent root = FXMLLoader.load(Controller.class.getResource("menu.fxml"));
+        Main.stage.setScene(new Scene(root, 600, 800));
         Main.stage.show();
 
         timeline.stop();
     }
 
     /**
-     * TODO
-     * při najetí kurzorem myši na tlačítko - změna obrázku
+     * Changes image when the mouse moves on the back button.
      */
     public void onMouseEnterBackButton() {
         Image SinglePlayerClick = ImageLoader.LoadImage("ExitClickButton.png");
@@ -183,24 +204,22 @@ public class GameController implements EventHandler<KeyEvent> {
     }
 
     /**
-     * TODO
+     * Changes image when the mouse moves off the back button.
      */
     public void onMouseLeaveBackButton() {
         backButton.setImage(back);
     }
 
     /**
-     * TODO
-     * restartuje hru
+     * Restarts the game.
      */
     public void retryButtonAction() {
         timeline.stop();
-        GameInit();
+        gameInit();
     }
 
     /**
-     * TODO
-     * při najetí kurzorem myši na tlačítko - změna obrázku
+     * Changes image when the mouse moves on the retry button.
      */
     public void onMouseEnterRetryButton() {
         Image retryClick = ImageLoader.LoadImage("RetryClickButton.png");
@@ -208,16 +227,15 @@ public class GameController implements EventHandler<KeyEvent> {
     }
 
     /**
-     * TODO
+     * Changes image when the mouse moves off the retry button.
      */
     public void onMouseLeaveRetryButton() {
         retryButton.setImage(retry);
     }
 
     /**
-     * TODO
-     * obsluha stisku kláves
-     * @param event
+     * Acts based on keyboard events.
+     * @param event The event.
      */
     @Override
     public void handle(KeyEvent event) {
@@ -225,118 +243,125 @@ public class GameController implements EventHandler<KeyEvent> {
         switch (event.getCode()) {
 
             case UP:
-                rotateShape(currentShape);                      //otočí aktuální kostičku o 90° doleva
+                // Rotates the current block.
+                rotateShape(currentShape);
                 break;
 
             case DOWN:
-                moveCurrentBlock(Direction.DOWN);               //posune aktuální kostičku o 1 políčko dolů
-                score = score + scoreLevel;                     //přičte určené skóre
+                // Moves the current block down and adds score.
+                moveCurrentBlock(Direction.DOWN);
+                score = score + scoreLevel;
                 break;
 
             case LEFT:
+                // Moves the current block left.
                 moveCurrentBlock(Direction.LEFT);
                 break;
 
             case RIGHT:
+                // Moves the current block right.
                 moveCurrentBlock(Direction.RIGHT);
                 break;
 
             case SPACE:
-                while (moveCurrentBlock(Direction.DOWN)) {      //vyvolává moveCurrentBlock dokud to jde
-                    score = score + 2* scoreLevel;              //přičte určené skóre
+                // Moves the current block down to the end and adds score.
+                while (moveCurrentBlock(Direction.DOWN)) {
+                    score = score + 2* scoreLevel;
                 }
                 break;
+
             default:
                 // nop
         }
 
-        if (Controller.numberOfPlayers == 2) {   //nastavení kláves pro multiPlayerImage
+        // Checking if the multi player mode is on.
+        if (Controller.numberOfPlayers == 2) {
 
+            // Generating random color.
             Image randomColor = randomColor(blockImages);
 
             switch (event.getCode()) {
 
                 case DIGIT1:
-                    //nastaví následující kostičku na Čtverec
+                    // Setting the next block to shape square.
                     nextShape = new Square(randomColor);
-                    render(block, nextShape.getShape(), nextBlockBackground);
+                    draw(block, nextShape.getShape(), nextBlockBackground);
                     break;
 
                 case DIGIT2:
-                    //nastaví následující kostičku na MirrorL
+                    // Setting the next block to shape mirror L.
                     nextShape = new MirrorL(randomColor);
-                    render(block, nextShape.getShape(), nextBlockBackground);
+                    draw(block, nextShape.getShape(), nextBlockBackground);
                     break;
 
                 case DIGIT3:
-                    //nastaví následující kostičku na NormalL
+                    // Setting the next block to shape normal L.
                     nextShape = new NormalL(randomColor);
-                    render(block, nextShape.getShape(), nextBlockBackground);
+                    draw(block, nextShape.getShape(), nextBlockBackground);
                     break;
 
                 case DIGIT4:
-                    //nastaví následující kostičku na Téčko
+                    // Setting the next block to shape T.
                     nextShape = new ShapeT(randomColor);
-                    render(block, nextShape.getShape(), nextBlockBackground);
+                    draw(block, nextShape.getShape(), nextBlockBackground);
                     break;
 
                 case DIGIT5:
-                    //nastaví následující kostičku na NormalZ
+                    // Setting the next block to shape normal Z.
                     nextShape = new NormalZ(randomColor);
-                    render(block, nextShape.getShape(), nextBlockBackground);
+                    draw(block, nextShape.getShape(), nextBlockBackground);
                     break;
 
                 case DIGIT6:
-                    //nastaví následující kostičku na MirrorZ
+                    // Setting the next block to shape mirror Z.
                     nextShape = new MirrorZ(randomColor);
-                    render(block, nextShape.getShape(), nextBlockBackground);
+                    draw(block, nextShape.getShape(), nextBlockBackground);
                     break;
 
                 case DIGIT7:
-                    //nastaví následující kostičku na Trubku
+                    // Setting the next block to shape tube.
                     nextShape = new Tube(randomColor);
-                    render(block, nextShape.getShape(), nextBlockBackground);
+                    draw(block, nextShape.getShape(), nextBlockBackground);
                     break;
             }
         }
     }
 
     /**
-     * TODO
-     * posune kostku danym smerem
-     * @param direction direction, kterym sem a kostka posunout
-     * @return true pokud se posunuti povedlo,jinak false
+     * Moves the current block in given direction.
+     * @param direction The given direction.
+     * @return  TRUE - if moving was successful
+     *          else FALSE
      */
     public boolean moveCurrentBlock(Direction direction) {
-        //nastavení posunutí souřadnic
+
+        // Testing the new coordinates.
         int x = currentShape.getX() + direction.getX();
         int y = currentShape.getY() + direction.getY();
-
-        // Vytvoreni kopie hraciho pole s vlozenou kostickou s posunem dle smeru
         Block[][] copyArray = GameUtils.copy(gameBoard);
         blockInsertStatus status = GameUtils.insertBlock(currentShape, gameBoard, copyArray, direction);
 
         switch (status) {
             
             case OK:
-                //posune kostičku a uloží ji do hracího pole
-                render(gameBoardCanvas, copyArray, playBackground, GAME_NUMBER_OF_VISIBLE_LINES);
+                // Moves the block.
+                draw(gameBoardCanvas, copyArray, playBackground, GAME_NUMBER_OF_VISIBLE_LINES);
                 currentShape.setX(x);
                 currentShape.setY(y);
                 return true;
                 
             case COLLISION_WITH_OTHER_BLOCK_FROM_SIDE:
-                //jdu na další řádek :-)
+                // .... :-)
                 
             case COLLISION_WITH_WALL:
-                //vykreslí pole stejně, jako kdyby se nic nestalo
+                // Nothing happens.
                 copyArray = GameUtils.copy(gameBoard);
                 GameUtils.insertBlock(currentShape, gameBoard, copyArray, Direction.NONE);
-                render(gameBoardCanvas, copyArray, playBackground, GAME_NUMBER_OF_VISIBLE_LINES);
+                draw(gameBoardCanvas, copyArray, playBackground, GAME_NUMBER_OF_VISIBLE_LINES);
                 return true;
                 
             case COLLISION_WITH_END:
-                //uloží spadlou kostku do hracího pole a nastaví novou následující kostičku
+                // Saves the current block to game board and generates new block.
                 copyArray = GameUtils.copy(gameBoard);
                 GameUtils.insertBlock(currentShape, gameBoard, copyArray, Direction.NONE);
                 gameBoard = copyArray;
@@ -349,19 +374,15 @@ public class GameController implements EventHandler<KeyEvent> {
     }
 
     /**
-     * TODO
-     * Otoci kostku o uhel dany matici {@link Constants#ROTATION_MATRIX}.
-     * @param currentShape shape k otoceni
+     * Rotates the current shape with the help of {@link Constants#ROTATION_MATRIX}.
+     * @param currentShape The current shape.
      */
     public void rotateShape(Shape currentShape) {
 
-        // Otoceni
+        // Creating the new matrix with coordinates of rotated shape.
         int[][] rotatedShapeInNumbers = matrixMultiplication(ROTATION_MATRIX, currentShape.getBody());
 
-        /*
-         * Pri otoceni muze dojit k presunu do jineho kvadrantu (- souradnice x nebo y), takze je potreba otocenou
-         * kostku dat zpet.
-         */
+        // Checking if the new matrix is not in negative numbers
         int min = Integer.MAX_VALUE;
 
         for (int i = 0; i < rotatedShapeInNumbers[0].length; i++) {
@@ -376,42 +397,44 @@ public class GameController implements EventHandler<KeyEvent> {
             rotatedShapeInNumbers[0][i] = rotatedShapeInNumbers[0][i] + min;
         }
 
+        // Creating the new rotated shape.
         Block[][] rotatedShape = currentShape.createShape(rotatedShapeInNumbers);
-
         this.currentShape.setShape(rotatedShape);
 
+        // Render the new shape.
         moveCurrentBlock(Direction.NONE);
     }
 
     /**
-     * TODO
-     * vykresli pole a image do Canvasu
-     * @param canvas
-     * @param gameBoard
-     * @param background
+     * Renders the game board and background to canvas.
+     * @param canvas The canvas.
+     * @param gameBoard The game board.
+     * @param background The background.
      */
-    public void render(Canvas canvas, Block[][] gameBoard, Image background) {
-        render(canvas, gameBoard, background, gameBoard.length);
+    public void draw(Canvas canvas, Block[][] gameBoard, Image background) {
+        draw(canvas, gameBoard, background, gameBoard.length);
     }
 
     /**
-     * TODO
-     * vykresli pole a image do Canvasu
-     * @param canvas
-     * @param gameBoard
-     * @param background
+     * Renders the game board and background to canvas.
+     * @param canvas The canvas.
+     * @param gameBoard The game board.
+     * @param background The background.
+     * @param numberOfVisibleLines Number of visible lines.
      */
-    public void render(Canvas canvas, Block[][] gameBoard, Image background, int numberOfVisibleLines) {
+    public void draw(Canvas canvas, Block[][] gameBoard, Image background, int numberOfVisibleLines) {
 
+        // Setting canvas for drawing.
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        // Smazat vykreslene pictures z predchoziho tiku
+        // Clearing canvas
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+
+        // Drawing background.
         gc.drawImage(background,0,0);
 
-        // offset od kdy zacit vykreslovat (prvni radky jsou neviditelne)
+        // Drawing game board.
         int offset = gameBoard.length - numberOfVisibleLines;
-
         for (int row = 0; row < gameBoard.length - offset; row++) {
             for (int col = 0; col < gameBoard[0].length; col++) {
 
@@ -427,8 +450,7 @@ public class GameController implements EventHandler<KeyEvent> {
     }
 
     /**
-     * TODO
-     * vymaze plné řádky a přičte určené skóre
+     * Deletes full lines from game board and adds score.
      */
     public void deleteFullLines() {
 
@@ -451,7 +473,7 @@ public class GameController implements EventHandler<KeyEvent> {
 
                 deleteLine(row, gameBoard);
                 gameBoard = moveTheRestBlocksDown(row, gameBoard);
-                render(gameBoardCanvas, gameBoard, playBackground, GAME_NUMBER_OF_VISIBLE_LINES);
+                draw(gameBoardCanvas, gameBoard, playBackground, GAME_NUMBER_OF_VISIBLE_LINES);
 
                 scoreCounter++;
             }
@@ -475,9 +497,9 @@ public class GameController implements EventHandler<KeyEvent> {
     }
 
     /**
-     *  TODO
-     * @param lvl
-     * @return
+     * Speeds up the game depending on game level.
+     * @param lvl The game level.
+     * @return Score level. // TODO weird function
      */
     public int timerUp(int lvl) {
 
@@ -513,13 +535,14 @@ public class GameController implements EventHandler<KeyEvent> {
             default:
                 //nop
         }
+
         return scoreLevel;
     }
 
     /**
-     * TODO
-     * @param score
-     * @return
+     * Finds the level based on the given score.
+     * @param score The given score.
+     * @return The game level.
      */
     public int levelUp(int score) {
         int lvl = 1;
@@ -538,18 +561,21 @@ public class GameController implements EventHandler<KeyEvent> {
     }
 
     /**
-     * TODO
+     * Game Over.
+     * Stops the game.
      */
     public void gameOver() {
+
+        // Stopping the game loop.
         timeline.stop();
 
-        // Priprava dialogu pro zadani jmena
+        // Creating dialog.
         TextInputDialog dialog = new TextInputDialog("");
         dialog.setTitle("Game Over");
         dialog.setHeaderText("GAME OVER. Do you want to save your score?");
         dialog.setContentText("Please enter your name loser:");
 
-        // Zobrazeni dialogu pro zadani jmena
+        // Saving score.
         Platform.runLater(() -> {
             String name;
             Optional<String> result = dialog.showAndWait();
